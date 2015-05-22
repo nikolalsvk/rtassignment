@@ -57,4 +57,4 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
 # use the following web driver to run tests
-Capybara.javascript_driver = :webkit
+#Capybara.javascript_driver = :webkit
