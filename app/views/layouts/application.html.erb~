@@ -22,11 +22,11 @@
       }
       
       img {
-					display: block;
-					max-width:230px;
-					max-height:95px;
-					width: auto;
-					height: auto;
+				display: block;
+				max-width:230px;
+				max-height:95px;
+				width: auto;
+				height: auto;
 			}
 
       /* Wrapper for page content to push down footer */
