@@ -49,6 +49,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production, :staging do
+	gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   	#gem "capybara-webkit"
