@@ -1,0 +1,14 @@
+class CreateAttributes < ActiveRecord::Migration
+  def change
+    create_table :attributes do |t|
+      t.string :title
+      t.integer :value
+      t.string :icon
+	
+			t.references :character_type, index: true
+			
+      t.timestamps
+    end
+    add_foreign_key :attributes, :character_types
+  end
+end

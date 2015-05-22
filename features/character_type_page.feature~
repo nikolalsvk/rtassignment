@@ -1,0 +1,7 @@
+Feature: Home page
+
+	Scenario: Viewing my application character types
+		Given I am logged in 
+		and there's a character type named "Rogue"
+		When I am on the character types page
+		Then I should see the "Rogue" character

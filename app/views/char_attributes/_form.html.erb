@@ -1,0 +1,19 @@
+<%= form_for([@char_type, @char_type.char_attributes.build]) do |f| %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+	
+	<p>
+    <%= f.label :value %>
+    <%= f.number_field :value %>	
+  </p>
+ 
+  <p>
+    <%= f.label :icon %><br>
+    <%= f.file_field :icon %>
+  </p>
+  <p>	
+    <%= f.submit %>
+  </p>
+<% end %>

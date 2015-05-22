@@ -1,0 +1,33 @@
+<h1>New character type</h1>
+
+<%= form_for :char_type, url: users_char_types_path, :html => {:multipart => true} do |f| %>
+	<% if @char_type.errors.any? %>
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@char_type.errors.count, "error") %> prohibited
+        this character type from being saved:
+      </p>
+      <ul>
+        <% @char_type.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>	
+  </p>
+ 
+  <p>
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<%= link_to 'Back', users_char_types_path %>
+

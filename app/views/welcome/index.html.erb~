@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <div id="main-container" class="container">
+      <div class="row">
+        <div id="sidebar" class="col-xs-3">
+          <h1>Hi there</h1>
+        </div>
+        <div id="content" class="col-xs-9">
+          <p>This is your basic RPG characters editor</p>
+          <p>You can add your new characters and their attributes!</p>
+          <%= link_to 'Add new character', controller: 'char_types' %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

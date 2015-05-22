@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  value: 1
+  icon: MyString
+  character_type_id: 
+
+two:
+  title: MyString
+  value: 1
+  icon: MyString
+  character_type_id: 

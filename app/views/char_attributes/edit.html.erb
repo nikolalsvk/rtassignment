@@ -1,0 +1,22 @@
+<h1>Edit character attribute</h1>
+
+<%= form_for @char_attribute do |f| %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+    <%= f.label :value %><br>
+    <%= f.number_field :value %>	
+  </p>
+ 
+  <p>
+    <%= f.label :icon %><br>
+    <%= f.file_field :icon %>
+  </p>
+  <p>	
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', users_char_types_path %>

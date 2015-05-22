@@ -1,0 +1,53 @@
+<h1>Listing character types</h1>
+ 
+<%= link_to new_users_char_type_path, class: 'btn btn-success' do %>
+ 	<i class="glyphicon glyphicon-plus"></i> New character type
+<% end %>
+
+<p></p>
+<%= paginate @char_types %>
+<% if current_user.char_types.present? %>
+<table class="table table-hover">
+  <tr>
+    <th>Title</th>
+    <th>Avatar</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th>Attributes</th>
+  </tr>
+ 
+  <% @char_types.each do |type| %>
+    <tr>
+      <td><%= type.title %></td>
+      <td><%= image_tag(type.avatar, :width => 100, :height => 100) if type.avatar.present? %></td>
+      <td><%= link_to 'Show', char_type_path(type) %></td>
+      <td><%= link_to 'Edit', edit_char_type_path(type) %></td>
+      <td><%= link_to 'Destroy', char_type_path(type),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+			<td>
+				<% if type.char_attributes.present? %>
+					<table class="table table-hover">
+						<tr>
+							<th>Attribute name</th>
+							<th>Attribute value</th>
+							<th>Attribute icon</th>
+							<th></th>
+		  				<th></th>
+		  				<th></th>
+						</tr>
+					
+							<%= render type.char_attributes %>
+					
+					</table>
+				<% else %>
+					<p>This character type has no attributes</p>
+				<% end %>
+			</td>
+    </tr>
+  <% end %>
+</table>
+<% else %>
+	<p>You haven't created any characters yet!</p>
+<% end %>

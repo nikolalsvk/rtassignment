@@ -1,0 +1,13 @@
+<tr>
+	<td>
+		<%= char_attribute.title %>
+	</td>
+	 
+	<td>
+		<%= char_attribute.value %>
+	</td>
+	<td><%= image_tag(char_attribute.icon, :width => 100, :height => 100) if char_attribute.icon.present? %></td>
+	<td><%= link_to 'Show', char_attribute_path(char_attribute) %></td>
+	<td><%= link_to 'Edit', edit_char_attribute_path(char_attribute) %></td>
+	<td><%= link_to 'Destroy', char_attribute_path(char_attribute),	method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -1,0 +1,34 @@
+
+<h1>Character</h1>
+<p>
+	<strong>Title:</strong> <%= @char_type.title %>
+</p>
+
+<p>
+	<strong>Avatar:</strong> <%= image_tag(@char_type.avatar, :width =>
+	100, :height => 100) if @char_type.avatar? %>
+</p>
+
+<strong>Attributes</strong>
+<% if @char_type.char_attributes.present? %>
+<table class="table table-hover">
+	<tr>
+		<th>Attribute name</th>
+		<th>Attribute value</th>
+		<th>Attribute icon</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<%= render @char_type.char_attributes %>
+
+</table>
+<% else %>
+<p>This character type has no attributes</p>
+<% end %>
+
+<strong>Add character attribute</strong>
+<%= render 'char_attributes/form' %> <%= link_to 'Back',
+users_char_types_path %>
+

@@ -1,0 +1,68 @@
+# Nedeljni zadatak - Mini RPG game editor
+
+## Ukratko
+
+Cilj je da se napravi mali editor u kojem svaki korisnik moze da kreira novi tip karaktera (primeri naziva tipa: Warrior, Mage, Hunter, Shaman…). Za svaki tip karaktera korisnik moze da doda n attributa, pri cemu svaki atribut moze da ima numericku vrednost i ikonicu koja reprezentuje atribut (primeri atributa: speed - 30, strength - 70, dexterity - 50…).
+
+## Funkcionalnost
+
+### Korisnici
+
+Aplikacija treba da omogući korisnicima da se registruju i uloguju sa emailom i šifrom. Pored toga korisnik treba da ima username. Nije potreban email confirmation. Koristi Devise gem.
+
+### Kreiranje tipa karaktera
+
+Svaki ulogovani korisnik može da kreira tipove karaktera.
+
+Polja tipa karaktera su:
+
+  - naziv
+  - avatar (upload - koristiti Carrierwave gem)
+
+Polja atributa su:
+
+  - naziv
+  - numericka vrednost
+  - ikona/avatar (upload)
+
+### Pregled tipova karaktera
+
+Po defaultu izlistati sve tipove karaktera koje je korisnik kreirao.
+
+Svi listinzi treba da imaju paginaciju (koristiti Kaminari gem). 
+
+### Stranica tip karaktera
+
+Stranica tipa karaktera treba da sadrzi:
+
+- ime karaktera
+- avatar karaktera
+- sve atribute sa vrednostima
+
+### Brisanje podataka
+
+Samo korisnik koji je objavio tip karaktera ima pravo da ga izbriše. U slučaju brisanja tipa karaktera, automatski se brišu i svi vezani atributi.
+
+### Dodavanje i izmena attributa
+
+Dodavanja, izmena i brisanje atributa za tip karaktera treba da je Ajaxifikovana.
+
+## Napomene
+
+Kod treba da bude na javnom Github repozitorijumu. Kada napraviš repo, pošalji nam link. Pushuj kod što češće. U imenovanjima itd koristi isključivo engleski jezik.
+
+Aplikacija treba da koristi Ruby 2.0, Rails 4, jQuery, AngularJS ili neku treću JS biblioteku i PostgreSQL.
+
+Koristiti Twitter Bootstrap i aplikaciju deploy-ovati na Heroku.
+
+Aplikaciju pokriti Cucumber scenarijima i RSpec testovima (vise je bolje).
+
+Glavne Rails reference su:
+http://api.rubyonrails.org
+http://guides.rubyonrails.org
+
+Pored toga korisno je pogledati nešto sa http://railscasts.com, ti već proceni prema vremenu.
+
+Slobodno možeš da gledaš i koristiš open source aplikacije kao primer.
+
+Slobodno nas kontaktiraj ako imaš neka pitanja.
