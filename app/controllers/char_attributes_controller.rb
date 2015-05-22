@@ -1,4 +1,9 @@
 class CharAttributesController < ApplicationController
+	def new
+		@char_type = CharType.find(params[:char_type_id])
+		@char_attribute = @char_type.char_attributes.new
+	end
+
 	def edit
 		@char_attribute = CharAttribute.find(params[:id])
 	end

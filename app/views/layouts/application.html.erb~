@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href="/../../assets/bootstrap.min.css" media="screen" rel="stylesheet" />
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   
   
@@ -23,8 +24,8 @@
       
       img {
 				display: block;
-				max-width:230px;
-				max-height:95px;
+				max-width:600px;
+				max-height:400px;
 				width: auto;
 				height: auto;
 			}

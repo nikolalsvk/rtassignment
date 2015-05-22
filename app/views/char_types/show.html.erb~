@@ -25,10 +25,10 @@
 
 </table>
 <% else %>
-<p>This character type has no attributes</p>
+<p>This character type has no attributes! <%= link_to 'Add some', new_char_type_char_attributes_path(@char_type) %>.</p>
 <% end %>
 
-<p>Add character attribute</p>
-<%= render 'char_attributes/form' %> <%= link_to 'Back',
-users_char_types_path %>
+<strong>Add character attribute</strong>
+<%= render 'char_attributes/form' %> 
+<%= link_to 'Back', users_char_types_path %>
 

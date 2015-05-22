@@ -3,9 +3,10 @@
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 	</p>
+	
 	<p>
-    <%= f.label :value %><br>
-    <%= f.number_field :value %>	
+    <%= f.label :value %>
+    <%= f.number_field :value, min:0, max:1000 %>	
   </p>
  
   <p>

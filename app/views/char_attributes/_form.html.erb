@@ -6,12 +6,12 @@
 	
 	<p>
     <%= f.label :value %>
-    <%= f.number_field :value %>	
+    <%= f.number_field :value, min:0, max:1000 %>	
   </p>
  
   <p>
     <%= f.label :icon %><br>
-    <%= f.file_field :icon %>
+    <%= f.file_field :icon, accept: 'image/png,image/gif,image/jpeg' %>
   </p>
   <p>	
     <%= f.submit %>

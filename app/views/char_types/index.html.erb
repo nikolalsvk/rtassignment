@@ -39,10 +39,17 @@
 						</tr>
 					
 							<%= render type.char_attributes %>
-					
+						<tr>
+							<th><%= link_to 'Add more attributes', new_char_type_char_attribute_path(type) %></th>
+							<th></th>
+		  				<th></th>
+		  				<th></th>
+		  				<th></th>
+		  				<th></th>
+						</tr>
 					</table>
 				<% else %>
-					<p>This character type has no attributes</p>
+					<p>This character type has no attributes! <%= link_to 'Add some', new_char_type_char_attribute_path(type) %>.</p>
 				<% end %>
 			</td>
     </tr>
