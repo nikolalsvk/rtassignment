@@ -8,8 +8,8 @@ describe "user log in" do
 
     visit "/users/sign_in"
 
-    fill_in "Email", with: "me@example.com"
-    fill_in "Password", with: "watching the telly"
+    fill_in "Email", with: "minikermit@hotmail.com"
+    fill_in "Password", with: "12345678"
 
     click_button "Log in"
 
