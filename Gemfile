@@ -55,7 +55,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
-  	#gem "capybara-webkit"
+  gem "capybara-webkit"
   gem 'shoulda-matchers'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
