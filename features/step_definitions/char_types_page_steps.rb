@@ -30,7 +30,7 @@ Then(/^I should see the "(.*?)" character$/) do |title|
 end
 
 When(/^I click on "(.*?)" link$/) do |link|
-  click_link link
+  first(:link, link).click
 end
 
 When(/^I click "(.*?)" button$/) do |button|

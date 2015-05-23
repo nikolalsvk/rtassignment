@@ -38,7 +38,7 @@
 		  				<th></th>
 						</tr>
 					
-							<%= render type.char_attributes %>
+							<%= render type.char_attributes.order("title").page(params[:page]) %>
 						<tr>
 							<th><%= link_to 'Add more attributes', new_char_type_char_attribute_path(type) %></th>
 							<th></th>
