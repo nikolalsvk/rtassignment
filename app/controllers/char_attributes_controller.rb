@@ -1,4 +1,10 @@
-class CharAttributesController < ApplicationController
+class CharAttributesController < ApplicationController	
+	respond_to :html, :js
+
+	def show
+		@char_attribute = CharAttribute.find(params[:id])
+	end
+
 	def new
 		@char_type = CharType.find(params[:char_type_id])
 		@char_attribute = @char_type.char_attributes.new
@@ -12,7 +18,11 @@ class CharAttributesController < ApplicationController
 		@char_type = CharType.find(params[:char_type_id])
 		@char_attribute = @char_type.char_attributes.create(char_attributes_params)
 		
-		redirect_to char_type_path(@char_type)
+		if @char_attribute.save
+			redirect_to char_type_path(@char_type)
+		else
+			render 'new'
+		end
 	end
 	
 	def update

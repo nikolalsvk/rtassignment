@@ -1,22 +1,51 @@
-<h1>Edit character attribute</h1>
+<div class="col-sm-offset-1 col-sm-10">
+	<h1>Edit "<%= @char_attribute.title %>" attribute</h1>
+</div>
 
-<%= form_for @char_attribute do |f| %>
-	<p>
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</p>
-	<p>
-    <%= f.label :value %><br>
-    <%= f.number_field :value %>	
-  </p>
+<%= form_for @char_attribute, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
+
+	<% if @char_attribute.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@char_attribute.errors.count, "error") %> prohibited
+        this character attribute from being saved:
+      </h2>
+      <ul>
+        <% @char_attribute.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="field form-group">
+    <%= f.label :title, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+    	<%= f.text_field :title, class: 'form-control' %>
+ 		</div>
+ 	</div> 
+	
+	<div class="field form-group">
+    <%= f.label :value, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+    	<%= f.number_field :value, min:0, max:1000, class: 'form-control' %>	
+    </div>
+  </div>
  
-  <p>
-    <%= f.label :icon %><br>
-    <%= f.file_field :icon %>
-  </p>
-  <p>	
-    <%= f.submit %>
-  </p>
+  <div class="field form-group">
+    <%= f.label :icon, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+    	<%= f.file_field :icon, accept: 'image/png,image/gif,image/jpeg' %>
+  	</div>
+  </div>
+  
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>
 
-<%= link_to 'Back', users_char_types_path %>
+<div class="col-sm-offset-1 col-sm-10">  
+	<%= link_to 'Back', users_char_types_path %>
+</div>

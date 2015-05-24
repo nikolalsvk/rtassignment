@@ -49,7 +49,7 @@ end
 
 Then(/^I should see the "(.*?)" edit page$/) do |arg1|
   page.should have_content(title)
-  page.should have_content("Edit character type")
+  page.should have_content("Edit")
 end
 
 

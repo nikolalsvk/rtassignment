@@ -1,0 +1,1 @@
+$('body').append('<%= redirect_to char_type_path(@char_type) %>');

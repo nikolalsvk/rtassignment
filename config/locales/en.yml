@@ -21,8 +21,6 @@
 
 en:
   hello: "Hello world"
-  
-en:
   errors:
     messages:
       wrong_size: "is the wrong size (should be %{file_size})"

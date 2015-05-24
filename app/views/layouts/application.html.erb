@@ -9,10 +9,7 @@
   <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-  
-  
   <style type="text/css">
-
       /* Sticky footer styles
       -------------------------------------------------- */
 
@@ -79,13 +76,13 @@
 		</nav>
   
 		<div class="container">
-		<!-- Added for Devise -->
-		<% if notice %>
-			<p class="alert alert-success"><%= notice %></p>
-		<% end %>
-		<% if alert %>
-			<p class="alert alert-danger"><%= alert %></p>
-		<% end %>
+			<!-- Added for Devise -->
+			<% if notice %>
+				<p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+				<p class="alert alert-danger"><%= alert %></p>
+			<% end %>
 		</div>
 		
 		<div class="container">

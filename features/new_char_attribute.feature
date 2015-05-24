@@ -12,6 +12,7 @@ Feature: Adding and editing new character attribute
 		
 	Scenario: Add new character attribute
 		Given I am at "Rogue" character page
+		And I click on "Add some" link
 		When I fill in the form
 		And I click "Create Char attribute"
 		Then I should see the new attribute

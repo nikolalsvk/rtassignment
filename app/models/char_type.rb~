@@ -5,8 +5,10 @@ class CharType < ActiveRecord::Base
 	belongs_to :user
 	has_many :char_attributes
 	
-	validates :title, presence: true
-	validates :logo, 
+	validates :title, presence: true,
+										length: { minimum: 3 }
+										
+	validates :avatar, 
 		:file_size => {
 			:maximum => 1.0.megabytes.to_i
 		}

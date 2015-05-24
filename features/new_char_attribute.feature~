@@ -29,4 +29,5 @@ Feature: Adding and editing new character attribute
 		Given character type Rogue has an attribute "Dexterity"
 		And I am at "Rogue" character page
 		When I click on "Destroy" link
+		And I click "OK" button
 		Then I shouldn't see "Dexterity" attribute

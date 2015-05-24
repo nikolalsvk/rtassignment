@@ -5,6 +5,7 @@ end
 
 When(/^I fill in the form$/) do
 	fill_in "Title", :with => "Dexterity"
+	fill_in "Value", :with => "10"
 end
 
 Then(/^I should see the new attribute$/) do
@@ -12,7 +13,7 @@ Then(/^I should see the new attribute$/) do
 end
 
 Given(/^character type Rogue has an attribute "(.*?)"$/) do |attribute|
-  @char_type.char_attributes.create!({ :title => attribute })
+  @char_type.char_attributes.create!({ :title => attribute, :value => '10' })
 end
 
 When(/^I fill in "(.*?)"$/) do |attribute_title|

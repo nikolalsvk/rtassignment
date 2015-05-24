@@ -12,7 +12,6 @@
   
   
   <style type="text/css">
-
       /* Sticky footer styles
       -------------------------------------------------- */
 
@@ -25,7 +24,7 @@
       img {
 				display: block;
 				max-width:600px;
-				max-height:400px;
+				max-height:300px;
 				width: auto;
 				height: auto;
 			}
@@ -79,13 +78,13 @@
 		</nav>
   
 		<div class="container">
-		<!-- Added for Devise -->
-		<% if notice %>
-			<p class="alert alert-success"><%= notice %></p>
-		<% end %>
-		<% if alert %>
-			<p class="alert alert-danger"><%= alert %></p>
-		<% end %>
+			<!-- Added for Devise -->
+			<% if notice %>
+				<p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+				<p class="alert alert-danger"><%= alert %></p>
+			<% end %>
 		</div>
 		
 		<div class="container">

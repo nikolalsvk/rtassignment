@@ -4,7 +4,7 @@ describe "user log in" do
              :email => "minikermit@hotmail.com",
              :password => "12345678",
              :password_confirmation => "12345678"
-           })
+         })
 
     visit "/users/sign_in"
 

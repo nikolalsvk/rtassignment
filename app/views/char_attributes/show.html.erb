@@ -1,14 +1,16 @@
-	<p>
-		<strong>Title:</strong>
-		<%= char_attribute.title %>
-	</p>
-	 
-	<p>
-		<strong>Value:</strong>
-		<%= char_attribute.value %>
-	</p>
-	<p><%= image_tag(char_attribute.icon, :width => 100, :height => 100) if char_attribute.icon.present? %></p>
-	<td><%= link_to 'Show', char_attribute_path(char_attribute) %></td>
-	<td><%= link_to 'Edit', edit_char_attribute_path(char_attribute) %></td>
-	<td><%= link_to 'Destroy', char_attribute_path(char_attribute) %></td>
-	<%= link_to 'Back', users_char_types_path %>
+<h1> Attribute "<%= @char_attribute.title %>"</h1>
+
+<table class="table table-hover">
+	<tr>
+		<th>Attribute name</th>
+		<th>Attribute value</th>
+		<th>Attribute icon</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	
+	<%= render @char_attribute %>
+</table>
+
+<%= link_to 'Back', users_char_types_path %>

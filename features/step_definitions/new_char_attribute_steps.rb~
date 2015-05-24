@@ -12,7 +12,7 @@ Then(/^I should see the new attribute$/) do
 end
 
 Given(/^character type Rogue has an attribute "(.*?)"$/) do |attribute|
-  @char_type.char_attributes.create!({ :title => attribute })
+  @char_type.char_attributes.create!({ :title => attribute, :value => '10' })
 end
 
 When(/^I fill in "(.*?)"$/) do |attribute_title|
@@ -24,7 +24,7 @@ Then(/^I should see "(.*?)" attribute$/) do |attribute|
 end
 
 Then(/^I shouldn't see "(.*?)" attribute$/) do |attribute|
-  page.should not_have_content
+  page.should have_no_content(attribute)
 end
 
 
