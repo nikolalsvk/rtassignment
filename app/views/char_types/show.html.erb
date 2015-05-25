@@ -15,8 +15,12 @@
 <% if @char_type.char_attributes.present? %>
 	<%= render 'all_attributes_table' %>
 <% else %>
-	<p>This character type has no attributes! <%= link_to 'Add some', new_char_type_char_attribute_path(@char_type) %>.</p>
+	<div class="col-sm-offset-0 col-sm-10">
+		This character type has no attributes! <%= link_to 'Add some', new_char_type_char_attribute_path(@char_type) %>.
+	</div>
 <% end %>
 
-<%= link_to 'Back', users_char_types_path %>
+<div class="col-sm-offset-0 col-sm-10">
+	<%= link_to 'Back', users_char_types_path %>
+</div>
 
