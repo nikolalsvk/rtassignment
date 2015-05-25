@@ -19,14 +19,7 @@
  
   <% @char_types.each do |type| %>
     <tr>
-      <td><%= type.title %></td>
-      <td><%= image_tag(type.avatar, :width => 100, :height => 100) if type.avatar.present? %></td>
-      <td><%= link_to 'Show', char_type_path(type) %></td>
-      <td><%= link_to 'Edit', edit_char_type_path(type) %></td>
-      <td><%= link_to 'Destroy', char_type_path(type),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-			<td>
+      <%= render type %>
 				<% if type.char_attributes.present? %>
 					<table class="table table-hover">
 						<tr class="info">
@@ -57,5 +50,5 @@
   <% end %>
 </table>
 <% else %>
-	<p>You haven't created any characters yet!</p>
+	<p>You haven't created any characters yet! <%= link_to 'Create some', new_users_char_type_path %>.</p>
 <% end %>

@@ -1,7 +1,3 @@
-<div class="col-sm-offset-1 col-sm-10">
-	<h1>Edit "<%= @char_attribute.title %>" attribute</h1>
-</div>
-
 <%= form_for @char_attribute, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
 
 	<% if @char_attribute.errors.any? %>
@@ -45,7 +41,3 @@
     </div>
   </div>
 <% end %>
-
-<div class="col-sm-offset-1 col-sm-10">  
-	<%= link_to 'Back', users_char_types_path %>
-</div>

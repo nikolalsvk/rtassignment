@@ -1,16 +1,17 @@
-
-<h1>Character "<%= @char_type.title %>"</h1>
+<div class="col-sm-offset-0 col-sm-10">  
+	<h1>Character "<%= @char_type.title %>"</h1>
+</div>
+<div class="col-sm-offset-0 col-sm-10"> 
 <p>
 	<strong>Title:</strong> <%= @char_type.title %>
 </p>
 
 <p>
-	<strong>Avatar:</strong> <%= image_tag(@char_type.avatar, :width =>
-		100, :height => 100) if @char_type.avatar? %>
+	<strong>Avatar:</strong> <%= image_tag(@char_type.avatar, :width =>	100, :height => 100) if @char_type.avatar? %>
 </p>
 
-<strong>Attributes</strong>
-
+<strong>Attributes:</strong>
+</div>
 <% if @char_type.char_attributes.present? %>
 	<%= render 'all_attributes_table' %>
 <% else %>

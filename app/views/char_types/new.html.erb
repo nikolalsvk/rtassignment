@@ -2,41 +2,7 @@
 	<h1>New character type</h1>
 </div>
 
-<%= form_for :char_type, url: users_char_types_path, :html => {class: 'form-horizontal', :multipart => true} do |f| %>
-	<% if @char_type.errors.any? %>
-    <div id="error_explanation">
-      <p>
-        <%= pluralize(@char_type.errors.count, "error") %> prohibited
-        this character type from being saved:
-      </p>
-      <ul>
-        <% @char_type.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field form-group">
-    <%= f.label :title, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-    	<%= f.text_field :title, class: 'form-control' %>
- 		</div>
- 	</div> 
- 	
-  <div class="field form-group">
-    <%= f.label :avatar, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-    	<%= f.file_field :avatar %>
-    </div>
-  </div>
-  
-  <div class="actions form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit %>
-    </div>
-  </div>
-<% end %>
+<%= render 'form' %>
 
 <div class="col-sm-offset-1 col-sm-10">  
 	<%= link_to 'Back', users_char_types_path %>

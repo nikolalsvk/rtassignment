@@ -1,4 +1,4 @@
-<%= form_for @char_type, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
+<%= form_for @char_type, url: new_users_char_type_path(@char_type), html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
  
   <% if @char_type.errors.any? %>
     <div id="error_explanation">
