@@ -1,8 +1,0 @@
-<div class="col-sm-offset-1 col-sm-10">
-<h1>Add new attribute</h1>
-
-<%= render 'form' %>
-
-<div class="col-sm-offset-1 col-sm-10">  
-	<%= link_to 'Back', users_char_types_path %>
-</div>

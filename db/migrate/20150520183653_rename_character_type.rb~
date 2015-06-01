@@ -1,5 +1,0 @@
-class RenameCharacterType < ActiveRecord::Migration
-   def change
-    rename_table :character_types, :char_types
-  end
-end

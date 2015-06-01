@@ -1,6 +1,0 @@
-class WelcomeController < ApplicationController
-	before_filer :authenticate_user!, :except => [:index]
-	
-  def index
-  end
-end

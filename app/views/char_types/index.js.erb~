@@ -1,2 +1,0 @@
-$("#new-char-type-modal").html("<%= escape_javascript(render 'char_attributes/new') %>")
-$("#new-char-type-modal").modal("show")

@@ -1,7 +1,0 @@
-<td><%= char_type.title %></td>
-<td><%= image_tag(@char_type.avatar, :width => 100, :height => 100) if @char_type.avatar.present? %></td>
-<td><%= link_to 'Show', char_type_path(@char_type) %></td>
-<td><%= link_to 'Edit', edit_char_type_path(@char_type) %></td>
-<td><%= link_to 'Destroy', char_type_path(@char_type), method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-<td>

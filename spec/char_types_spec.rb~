@@ -1,6 +1,0 @@
-require 'spec_helper'
-require 'char_type'
-
-describe CharTypes do
-	it "has a title"
-end
