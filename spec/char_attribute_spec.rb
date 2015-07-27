@@ -3,6 +3,7 @@ require "rails_helper"
 
 describe CharAttribute do
 	it { should belong_to(:char_type) }
+	it
 
 	it "should have title" do
 		char_attribute = CharAttribute.new

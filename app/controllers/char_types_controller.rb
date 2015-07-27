@@ -1,6 +1,6 @@
 class CharTypesController < ApplicationController
 	def index
-		@char_types = current_user.char_types.order("title").page(params[:page]).per(4)
+		@char_types = current_user.char_types.by_title.page(params[:page]).per(4)
 	end
 
 	def show
@@ -39,10 +39,6 @@ class CharTypesController < ApplicationController
 	
 	def destroy
 		@char_type = current_user.char_types.find(params[:id])
-		
-		if @char_type.char_attributes.present?
-			@char_type.char_attributes.destroy
-		end
 		
 		@char_type.destroy
 		

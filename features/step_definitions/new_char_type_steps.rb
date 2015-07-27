@@ -10,7 +10,6 @@ When(/^I click "(.*?)"$/) do |save_button|
   click_button save_button
 end
 
-
 Then(/^I should see my new character$/) do
   page.should have_content("Rogue")
 end

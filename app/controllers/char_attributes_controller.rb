@@ -18,7 +18,7 @@ class CharAttributesController < ApplicationController
 
 	def create
 		@char_type = current_user.char_types.find(params[:char_type_id])
-		@char_attribute = @char_type.char_attributes.create(char_attributes_params)
+		@char_attribute = @char_type.char_attributes.build(char_attributes_params)
 		
 		if @char_attribute.save
 			redirect_to char_type_path(@char_type)
@@ -44,6 +44,10 @@ class CharAttributesController < ApplicationController
 	private
 		def char_attributes_params
 			params.require(:char_attribute).permit(:title, :value, :icon)
+		end
+		
+		def find_char_type
+			@char_type = current_user.char_types(params[:char_type_id])
 		end
 		
 		# improved security with this function being called before some actions

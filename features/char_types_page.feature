@@ -1,18 +1,7 @@
 Feature: Home page
 	
-	Background: User logs in
-		Given a valid user
-		When I go to the login page
-		And I fill in the following:
-		  |Email|minikermit@hotmail.com|
-		  |Password|12345678|
-		And I press "Log in"
-		Then I should see "Signed in successfully."
-	
-	Scenario: View my "Rogue" character
-		Given there's a character type named "Rogue"
-		When I am on the character types page
-		Then I should see the "Rogue" character
+	Background: logs User in
+	  	Given a user is signed up
 		
 	Scenario: Show my "Rogue" character
 		Given there's a character type named "Rogue"
