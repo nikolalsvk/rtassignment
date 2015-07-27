@@ -1,6 +1,6 @@
-Feature: Adding new charater type
+Feature: Character type manipulation
 	
-	Background: User logs in
+	Background: User is logged in
 		Given a user is signed up
 		
 	Scenario: Add new character

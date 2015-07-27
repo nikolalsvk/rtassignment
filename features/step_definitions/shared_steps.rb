@@ -9,3 +9,7 @@ Given(/^a user is signed up$/) do
 	Then I should see "Signed in successfully."
   }
 end
+
+When(/^I click on "(.*?)" link$/) do |link|
+  first(:link, link).click
+end

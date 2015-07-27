@@ -11,8 +11,6 @@ Rpgapp::Application.routes.draw do
 		resource :users, shallow: true do
 			resources :char_types, shallow: true do
 				resources :char_attributes
-				
-				
 			end
 		end
 		
