@@ -1,10 +1,14 @@
-describe "user log in" do
+require "spec_helper"
+require "rails_helper"
+
+describe "log in" do
   it "allows an existing user to sign in" do
+    skip "user create"
     User.create!({
-             :email => "minikermit@hotmail.com",
-             :password => "12345678",
-             :password_confirmation => "12345678"
-         })
+       :email => "minikermit@hotmail.com",
+       :password => "12345678",
+       :password_confirmation => "12345678"
+       })
 
     visit "/users/sign_in"
 

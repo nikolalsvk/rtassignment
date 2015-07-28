@@ -1,13 +1,7 @@
-Feature: Adding new charater type
+Feature: Adding a new charater type
 	
-	Background: User logs in
-		Given a valid user
-		When I go to the login page
-		And I fill in the following:
-		  |Email|minikermit@hotmail.com|
-		  |Password|12345678|
-		And I press "Log in"
-		Then I should see "Signed in successfully."
+	Background: User is logged in
+		Given a user is signed up
 		
 	Scenario: Add new character
 		Given I am at new character page

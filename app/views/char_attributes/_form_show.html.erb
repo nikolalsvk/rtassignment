@@ -1,4 +1,4 @@
-<%= form_for @char_attribute, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
+<%= form_for [@char_type, @char_attribute], html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
 
 	<% if @char_attribute.errors.any? %>
     <div id="error_explanation">
