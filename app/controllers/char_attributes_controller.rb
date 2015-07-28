@@ -1,11 +1,10 @@
 class CharAttributesController < ApplicationController	
 	respond_to :html, :js
 
-	before_action :find_char_attribute, only: [:show, :edit, :destroy, :update]
-	before_action :find_char_type, only: [ :new, :create]
-
+	before_action :find_char_type, :only => [ :show, :edit, :destroy, :new, :create, :update ]
+	before_action :find_char_attribute, :only => [ :show, :edit, :destroy, :update ]
+	
 	def show
-
 	end
 
 	def new
@@ -14,11 +13,9 @@ class CharAttributesController < ApplicationController
 	end
 
 	def edit
-
 	end
 
 	def create
-		@char_type = current_user.char_types.find(params[:char_type_id])
 		@char_attribute = @char_type.char_attributes.build(char_attributes_params)
 
 		if @char_attribute.save
@@ -39,7 +36,7 @@ class CharAttributesController < ApplicationController
 	def destroy
 		@char_attribute.destroy
 
-		redirect_to users_char_types_path
+		redirect_to char_types_path
 	end
 
 	private
@@ -48,18 +45,16 @@ class CharAttributesController < ApplicationController
 	end
 
 	def find_char_type
-		@char_type = current_user.char_types(params[:char_type_id])
+		@char_type = current_user.char_types.find_by_id(params[:char_type_id])
 	end
 
 	# TODO refactor
 	# improved security with this function being called before some actions
 	def find_char_attribute
-		@char_attribute = CharAttribute.find(params[:id])
-
-		if current_user.char_types.find_by_id(@char_attribute.char_type_id).present?
-			@char_attribute = current_user.char_types.find_by_id(@char_attribute.char_type_id).char_attributes.find(params[:id])
+		if @char_type.present?
+			@char_attribute = @char_type.char_attributes.find_by_id(params[:id])
 		else
-			redirect_to users_char_types_path
+			redirect_to char_types_path
 		end
 	end
 end

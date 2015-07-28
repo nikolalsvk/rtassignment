@@ -66,8 +66,8 @@
 				</div>
 				
 				<ul class="nav navbar-nav">
-				  <li class="active"><a href="/users/char_types">All charaters</a></li>
-          <li><a href="/users/char_types/new">New character</a></li>
+				<li class="active"><%= link_to "All characters", char_types_path %></li>
+          		<li><%= link_to "New character", new_char_type_path %></li>
           <% if user_signed_in? %>
           	<li class="pull-right"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
           <% end %>

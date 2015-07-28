@@ -7,19 +7,16 @@ Rpgapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
 	
-	Rails.application.routes.draw do
-		resource :users, shallow: true do
-			resources :char_types, shallow: true do
-				resources :char_attributes
-			end
-		end
+		resource :users
 		
+    resources :char_types do
+        resources :char_attributes
+    end
 		#resource :char_types, shallow: true do
 		#	resource :char_attributes
 			
 		#end
 		root 'welcome#index'
-  end
 	
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

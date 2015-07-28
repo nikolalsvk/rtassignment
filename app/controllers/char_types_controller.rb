@@ -38,7 +38,7 @@ class CharTypesController < ApplicationController
 	def destroy
 		@char_type.destroy
 
-		redirect_to users_char_types_path
+		redirect_to char_types_path
 	end
 
 	private

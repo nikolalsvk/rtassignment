@@ -1,6 +1,6 @@
 <h1>Listing character types</h1>
  
-<%= link_to new_users_char_type_path, class: 'btn btn-success' do %>
+<%= link_to new_char_type_path, class: 'btn btn-success' do %>
  	<i class="glyphicon glyphicon-plus"></i> New character type
 <% end %>
 
@@ -50,5 +50,5 @@
   <% end %>
 </table>
 <% else %>
-	<p>You haven't created any characters yet! <%= link_to 'Create some', new_users_char_type_path %>.</p>
+	<p>You haven't created any characters yet! <%= link_to 'Create some', new_char_type_path %>.</p>
 <% end %>

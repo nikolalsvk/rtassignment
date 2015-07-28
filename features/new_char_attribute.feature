@@ -1,4 +1,4 @@
-Feature: Adding and editing new character attribute
+Feature: Adding new character attribute
 
 	Background: User logs in
 		Given a user is signed up
@@ -12,14 +12,3 @@ Feature: Adding and editing new character attribute
 		And I click "Create Char attribute"
 		Then I should see the new attribute
 		
-	Scenario: Edit characters attribute
-		When I click on "Edit" link
-		And I fill in "Athletics"
-		And I click "Update Char attribute"
-		Then I should see "Athletics" attribute
-	
-	@javascript
-	Scenario: Destroy characters attribute
-		When I click on "Destroy" link
-		And I click "OK" button
-		Then I shouldn't see "Dexterity" attribute

@@ -5,7 +5,7 @@ end
 
 
 When(/^I am on the character types page$/) do
-  visit users_char_types_path
+  visit char_types_path
 end
 
 Then(/^I should see the "(.*?)" character$/) do |title|

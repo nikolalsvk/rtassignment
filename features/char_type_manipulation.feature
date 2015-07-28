@@ -1,5 +1,6 @@
-Feature: Home page
-	Background: User is logged in
+Feature: Character type manipulation
+
+	Background: User is logged in and on page
 	  	Given a user is signed up
 	  	And there's a character type named "Rogue"
 	  	When I am on the character types page

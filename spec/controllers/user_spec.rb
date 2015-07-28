@@ -19,4 +19,4 @@ describe "log in" do
 
     expect(page).to have_content("Signed in successfully.")
   end
- end
+end

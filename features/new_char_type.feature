@@ -1,4 +1,4 @@
-Feature: Character type manipulation
+Feature: Adding a new charater type
 	
 	Background: User is logged in
 		Given a user is signed up

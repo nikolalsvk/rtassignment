@@ -13,3 +13,11 @@ end
 When(/^I click on "(.*?)" link$/) do |link|
   first(:link, link).click
 end
+
+When(/^I click "(.*?)"$/) do |save_button|
+  click_button save_button
+end
+
+Then(/^I should see "(.*?)"$/) do |msg|
+  page.should have_content(msg)
+end
