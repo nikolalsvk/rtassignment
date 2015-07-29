@@ -8,7 +8,7 @@ Feature: User login and logout
       |Password|12345678|
     And I press "Log in"
     Then I should see "Signed in successfully."
-    
+
   Scenario: Logout
     When I click on "Logout" link
     Then I should see "Signed out successfully."

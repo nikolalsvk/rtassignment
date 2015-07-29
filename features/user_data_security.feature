@@ -10,4 +10,3 @@ Feature: User data security
   Scenario: User tries to view someone elses character attributes
     When user tries to access someone elses character attributes
     Then user should be redirected to his character types
-    
