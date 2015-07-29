@@ -1,5 +1,5 @@
 class CharTypesController < ApplicationController
-  before_action :find_char_type, only: [ :show, :edit, :update, :destroy ]
+  before_action :find_char_type, :only => [ :show, :edit, :update, :destroy ]
 
   def index
     @char_types = current_user.char_types.by_title.page(params[:page]).per(4)

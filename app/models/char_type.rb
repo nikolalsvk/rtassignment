@@ -6,7 +6,7 @@ class CharType < ActiveRecord::Base
   has_many :char_attributes, dependent: :destroy
   
   validates :title, presence: true,
-    length: { minimum: 3 }
+    :length => { :minimum => 3 }
                     
   validates :avatar, 
     :file_size => {

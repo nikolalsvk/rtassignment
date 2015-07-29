@@ -15,7 +15,7 @@
   </td>
   <td><%= link_to 'Destroy', char_type_char_attribute_path(:char_type_id => char_attribute.char_type.id, 
                                                            :id => char_attribute.id), :method => :delete, 
-                                                           :data => { confirm: 'Are you sure?' },
+                                                           :data => { :confirm => "Are you sure?" },
                                                            :class => "destroy_link" %>
   </td>
 </tr>

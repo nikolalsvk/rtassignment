@@ -1,5 +1,5 @@
 <%= form_for [@char_type, @char_type.char_attributes.build], html: { :class => "form-horizontal",
-  style: "display:inline;" } do |f| %>
+  :style => "display:inline;" } do |f| %>
 
   <% if @char_attribute.errors.any? %>
     <div id="error_explanation">
