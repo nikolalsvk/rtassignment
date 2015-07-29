@@ -3,6 +3,8 @@ require "rails_helper"
 
 describe User do
   it { should have_many(:char_types) }
+  it { should have_db_column(:email) }
+  it { should have_db_column(:encrypted_password) }
 
   it "is invalid with a duplicate email address" do
      User.create!({ :email => "minikermit@hotmail.com",

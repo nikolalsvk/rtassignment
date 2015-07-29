@@ -12,3 +12,5 @@ Feature: User login and logout
   Scenario: Logout
     When I click on "Logout" link
     Then I should see "Signed out successfully."
+
+  Scenario: Sign up

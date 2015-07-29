@@ -1,6 +1,6 @@
-class CharAttribute < ActiveRecord::Base
-  require 'file_size_validator' 
+require 'file_size_validator' 
 
+class CharAttribute < ActiveRecord::Base
   mount_uploader :icon, PictureUploader
   belongs_to :char_type
   
