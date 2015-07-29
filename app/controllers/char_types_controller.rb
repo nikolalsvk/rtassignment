@@ -48,6 +48,6 @@ class CharTypesController < ApplicationController
 
   def find_char_type
     @char_type = current_user.char_types.find_by_id(params[:id])
-    redirect_to char_types_path unless @char_type
+    render 'public/404' unless @char_type
   end
 end
