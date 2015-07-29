@@ -1,6 +1,6 @@
 <%= form_for [@char_type, @char_attribute], html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
 
-	<% if @char_attribute.errors.any? %>
+  <% if @char_attribute.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@char_attribute.errors.count, "error") %> prohibited
@@ -14,25 +14,25 @@
     </div>
   <% end %>
 
-	<div class="field form-group">
+  <div class="field form-group">
     <%= f.label :title, class: 'col-sm-2 control-label' %>
     <div class="col-sm-10">
-    	<%= f.text_field :title, class: 'form-control' %>
- 		</div>
- 	</div> 
-	
-	<div class="field form-group">
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+  </div> 
+  
+  <div class="field form-group">
     <%= f.label :value, class: 'col-sm-2 control-label' %>
     <div class="col-sm-10">
-    	<%= f.number_field :value, min:0, max:1000, class: 'form-control' %>	
+      <%= f.number_field :value, min:0, max:1000, class: 'form-control' %>  
     </div>
   </div>
  
   <div class="field form-group">
     <%= f.label :icon, class: 'col-sm-2 control-label' %>
     <div class="col-sm-10">
-    	<%= f.file_field :icon, accept: 'image/png,image/gif,image/jpeg' %>
-  	</div>
+      <%= f.file_field :icon, accept: 'image/png,image/gif,image/jpeg' %>
+    </div>
   </div>
   
   <div class="actions form-group">

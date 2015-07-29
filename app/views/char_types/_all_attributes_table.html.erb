@@ -1,21 +1,21 @@
 <table class="table table-hover">
-	<tr class="info">
-		<th>Attribute name</th>
-		<th>Attribute value</th>
-		<th>Attribute icon</th>
-		<th></th>
-		<th></th>
-		<th></th>
-	</tr>
-	
-	<%= paginate @char_type.char_attributes.order("title").page(params[:page]).per(4) %>
-	<%= render @char_type.char_attributes.order("title").page(params[:page]).per(4) %>
-	<tr>
-		<th><%= link_to 'Add more attributes', new_char_type_char_attribute_path(@char_type)%></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th></th>
-	</tr>
+  <tr class="info">
+    <th>Attribute name</th>
+    <th>Attribute value</th>
+    <th>Attribute icon</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <%= paginate @char_type.char_attributes.order("title").page(params[:page]).per(4) %>
+  <%= render @char_type.char_attributes.order("title").page(params[:page]).per(4) %>
+  <tr>
+    <th><%= link_to 'Add more attributes', new_char_type_char_attribute_path(@char_type)%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 </table>

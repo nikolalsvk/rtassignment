@@ -1,5 +1,5 @@
 Given(/^there's a character type named "(.*?)"$/) do |title|
-	user = User.find_by_email("minikermit@hotmail.com")
+  user = User.find_by_email("minikermit@hotmail.com")
   @char_type = user.char_types.create!({ :title => title })
 end
 
@@ -15,7 +15,7 @@ Then(/^I should see the "(.*?)" character$/) do |title|
 end
 
 When(/^I click "(.*?)" button$/) do |button|
-	page.evaluate_script('window.confirm = function() { return true; }')
+  page.evaluate_script('window.confirm = function() { return true; }')
 end
 
 
@@ -32,7 +32,3 @@ Then(/^I should see the "(.*?)" edit page$/) do |arg1|
   page.should have_content(title)
   page.should have_content("Edit")
 end
-
-
-
-

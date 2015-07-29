@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
- 	<meta charset="utf-8">
- 	<title>RPG App</title>
+  <meta charset="utf-8">
+  <title>RPG App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <style type="text/css">
       /* Sticky footer styles
@@ -20,12 +20,12 @@
       }
       
       img {
-				display: block;
-				max-width:600px;
-				max-height:300px;
-				width: auto;
-				height: auto;
-			}
+        display: block;
+        max-width:600px;
+        max-height:300px;
+        width: auto;
+        height: auto;
+      }
 
       /* Wrapper for page content to push down footer */
       #wrap {
@@ -54,57 +54,57 @@
           padding-right: 20px;
         }
       }
-	</style>
+  </style>
 </head>
 <body>
-	<div id="wrap">
+  <div id="wrap">
 
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-				  <a class="navbar-brand" href="/"><i>RPG App</i></a>
-				</div>
-				
-				<ul class="nav navbar-nav">
-				<li class="active"><%= link_to "All characters", char_types_path %></li>
-          		<li><%= link_to "New character", new_char_type_path %></li>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><i>RPG App</i></a>
+        </div>
+        
+        <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "All characters", char_types_path %></li>
+              <li><%= link_to "New character", new_char_type_path %></li>
           <% if user_signed_in? %>
-          	<li class="pull-right"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+            <li class="pull-right"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
           <% end %>
-		  	</ul>
-			</div>
-		</nav>
+        </ul>
+      </div>
+    </nav>
   
-		<div class="container">
-			<!-- Added for Devise -->
-			<% if notice %>
-				<p class="alert alert-success"><%= notice %></p>
-			<% end %>
-			<% if alert %>
-				<p class="alert alert-danger"><%= alert %></p>
-			<% end %>
-		</div>
-		
-		<div class="container">
-			<%= yield %>
-		</div>
-		
-	</div>
-	
-		
-	<div id="footer">
-		<div class="container">
-			<p class="navbar-text pull-right">
-			<% if user_signed_in? %>
-				Logged in as <strong><%= current_user.email %></strong>.
-				<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-				<%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %>
-			<% else %>
-				<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-				<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-			<% end %>
-			</p>
-		</div>
-	</div>
+    <div class="container">
+      <!-- Added for Devise -->
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+    
+  </div>
+  
+    
+  <div id="footer">
+    <div class="container">
+      <p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+      </p>
+    </div>
+  </div>
 </body>
 </html>

@@ -2,14 +2,14 @@
 
 Given /^a valid user$/ do
   @user = User.create!({
-             :email => "minikermit@hotmail.com",
-             :password => "12345678",
-             :password_confirmation => "12345678"
-           })
+    :email => "minikermit@hotmail.com",
+    :password => "12345678",
+    :password_confirmation => "12345678"
+  })
 end
 
 When(/^I go to the login page$/) do
-	visit user_session_path
+  visit user_session_path
 end
 
 When(/^I fill in the following:$/) do |table|
@@ -19,5 +19,5 @@ When(/^I fill in the following:$/) do |table|
 end
 
 When(/^I press "(.*?)"$/) do |button|
-	click_button button
+  click_button button
 end
