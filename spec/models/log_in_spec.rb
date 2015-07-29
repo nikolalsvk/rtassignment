@@ -1,10 +1,10 @@
 describe "user log in" do
   it "allows an existing user to sign in" do
     User.create!({
-             :email => "minikermit@hotmail.com",
-             :password => "12345678",
-             :password_confirmation => "12345678"
-         })
+       :email => "minikermit@hotmail.com",
+       :password => "12345678",
+       :password_confirmation => "12345678"
+       })
 
     visit "/users/sign_in"
 

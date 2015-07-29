@@ -1,7 +1,7 @@
 <h1>Listing character types</h1>
  
-<%= link_to new_users_char_type_path, class: 'btn btn-success' do %>
- 	<i class="glyphicon glyphicon-plus"></i> New character type
+<%= link_to new_char_type_path, :class => "btn btn-success" do %>
+  <i class="glyphicon glyphicon-plus"></i> New character type
 <% end %>
 
 <p></p>
@@ -20,35 +20,35 @@
   <% @char_types.each do |type| %>
     <tr>
       <%= render type %>
-				<% if type.char_attributes.present? %>
-					<table class="table table-hover">
-						<tr class="info">
-							<th>Attribute name</th>
-							<th>Attribute value</th>
-							<th>Attribute icon</th>
-							<th></th>
-		  				<th></th>
-		  				<th></th>
-						</tr>
-						
-							<%= render type.char_attributes.order(:title) %>
-							
-						<tr>
-							<th><%= link_to 'Add more attributes', new_char_type_char_attribute_path(type)%></th>
-							<th></th>
-		  				<th></th>
-		  				<th></th>
-		  				<th></th>
-		  				<th></th>
-						</tr>
-					</table>
-				<% else %>
-					<p>This character type has no attributes! <%= link_to 'Add some',new_char_type_char_attribute_path(type) %>.</p>
-				<% end %>
-			</td>
+        <% if type.char_attributes.present? %>
+          <table class="table table-hover">
+            <tr class="info">
+              <th>Attribute name</th>
+              <th>Attribute value</th>
+              <th>Attribute icon</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            
+              <%= render type.char_attributes.order(:title) %>
+              
+            <tr>
+              <th><%= link_to 'Add more attributes', new_char_type_char_attribute_path(type)%></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </table>
+        <% else %>
+          <p>This character type has no attributes! <%= link_to 'Add some', new_char_type_char_attribute_path(type) %>.</p>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
 <% else %>
-	<p>You haven't created any characters yet! <%= link_to 'Create some', new_users_char_type_path %>.</p>
+  <p>You haven't created any characters yet! <%= link_to 'Create some', new_char_type_path %>.</p>
 <% end %>

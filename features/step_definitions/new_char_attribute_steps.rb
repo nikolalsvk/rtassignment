@@ -4,12 +4,12 @@ Given(/^I am at "(.*?)" character page$/) do |title|
 end
 
 When(/^I fill in the form$/) do
-	fill_in "Title", :with => "Dexterity"
-	fill_in "Value", :with => "10"
+  fill_in "Title", :with => "Dexterity"
+  fill_in "Value", :with => "10"
 end
 
 Then(/^I should see the new attribute$/) do
-	page.should have_content("Dexterity")
+  page.should have_content("Dexterity")
 end
 
 Given(/^character type Rogue has an attribute "(.*?)"$/) do |attribute|
