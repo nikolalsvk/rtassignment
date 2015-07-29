@@ -1,7 +1,7 @@
 Feature: Adding a new charater type
   
   Background: User is logged in
-    Given a user is signed up
+    Given a user is signed in
     
   Scenario: Add new character
     Given I am at new character page

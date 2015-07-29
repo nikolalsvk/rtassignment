@@ -1,4 +1,4 @@
-Given(/^a user is signed up$/) do
+Given(/^a user is signed in$/) do
   steps %Q{
     Given a valid user
     When I go to the login page

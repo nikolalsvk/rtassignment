@@ -6,18 +6,18 @@ Rpgapp::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-	
-		resource :users
-		
+  
+    resource :users
+    
     resources :char_types do
-        resources :char_attributes
+      resources :char_attributes
     end
-		#resource :char_types, shallow: true do
-		#	resource :char_attributes
-			
-		#end
-		root 'welcome#index'
-	
+    #resource :char_types, shallow: true do
+    # resource :char_attributes
+      
+    #end
+    root 'welcome#index'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

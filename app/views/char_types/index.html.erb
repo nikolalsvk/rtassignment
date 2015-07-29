@@ -1,6 +1,6 @@
 <h1>Listing character types</h1>
  
-<%= link_to new_char_type_path, class: 'btn btn-success' do %>
+<%= link_to new_char_type_path, :class => "btn btn-success" do %>
   <i class="glyphicon glyphicon-plus"></i> New character type
 <% end %>
 
@@ -43,7 +43,7 @@
             </tr>
           </table>
         <% else %>
-          <p>This character type has no attributes! <%= link_to 'Add some',new_char_type_char_attribute_path(type) %>.</p>
+          <p>This character type has no attributes! <%= link_to 'Add some', new_char_type_char_attribute_path(type) %>.</p>
         <% end %>
       </td>
     </tr>
