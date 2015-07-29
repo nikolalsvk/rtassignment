@@ -46,7 +46,7 @@ gem 'foreigner', '~> 1.7.4'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  gem 'sdoc', :require => false
 end
 
 group :production, :staging do
@@ -57,7 +57,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'capybara-webkit', '~> 1.6.0'
   gem 'shoulda-matchers'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
