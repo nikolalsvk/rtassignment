@@ -8,7 +8,6 @@ class CharAttributesController < ApplicationController
   end
 
   def new
-    @char_type = current_user.char_types.find(params[:char_type_id])
     @char_attribute = @char_type.char_attributes.new
   end
 
@@ -49,7 +48,6 @@ class CharAttributesController < ApplicationController
     render 'public/404' unless @char_type
   end
 
-  # TODO refactor
   # improved security with this function being called before some actions
   def find_char_attribute
     if @char_type.present?
