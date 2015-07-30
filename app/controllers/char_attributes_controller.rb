@@ -26,7 +26,7 @@ class CharAttributesController < ApplicationController
 
   def update
     if @char_attribute.update(char_attributes_params)
-      redirect_to char_type_path(@char_attribute.char_type)
+      redirect_to char_type_path(@char_type)
     else
       render 'edit'
     end
