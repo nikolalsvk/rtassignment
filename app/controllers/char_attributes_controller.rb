@@ -1,8 +1,10 @@
 class CharAttributesController < ApplicationController  
   respond_to :html, :js
 
-  before_action :find_char_type, :only => [ :show, :edit, :destroy, :new, :create, :update ]
-  before_action :find_char_attribute, :only => [ :show, :edit, :destroy, :update ]
+  before_action :find_char_type, :only => [ :show, :edit, :destroy, 
+                                            :new, :create, :update ]
+  before_action :find_char_attribute, :only => [ :show, :edit, 
+                                                 :destroy, :update ]
   
   def show
   end

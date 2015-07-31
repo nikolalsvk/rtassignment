@@ -6,7 +6,6 @@ class CharTypesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -14,7 +13,6 @@ class CharTypesController < ApplicationController
   end
 
   def edit
-
   end
 
   def create

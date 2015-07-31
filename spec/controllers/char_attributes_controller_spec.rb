@@ -10,6 +10,7 @@ describe CharAttributesController, :type => :controller do
 
     allow(controller).to receive(:current_user).and_return(@user)
     allow(controller).to receive(:authenticate_user!)
+
   end
 
   describe "#show" do
@@ -59,14 +60,16 @@ describe CharAttributesController, :type => :controller do
 
     before do
       find_char_type_stub
-      allow(@char_type).to receive_message_chain(:char_attributes, :build).and_return(@char_attribute)
+      allow(@char_type).to receive_message_chain(:char_attributes, 
+                                                 :build).and_return(@char_attribute)
     end
 
     context "character attribute is valid" do
 
       before do
         allow(@char_attribute).to receive(:save).and_return(true)
-        post :create, :char_type_id => 42, :char_attribute => { :title => "Rogue", :value => "20" }
+        post :create, :char_type_id => 42, 
+                      :char_attribute => { :title => "Rogue", :value => "20" }
       end
 
       it "should create new attribute" do
@@ -83,7 +86,8 @@ describe CharAttributesController, :type => :controller do
 
       before do
         allow(@char_attribute).to receive(:save).and_return(false)
-        post :create, :char_type_id => 46, :char_attribute => { :title => "Rogue", :value => "20" }
+        post :create, :char_type_id => 46, 
+                      :char_attribute => { :title => "Rogue", :value => "20" }
       end
 
       it "should create new attribute" do
@@ -108,7 +112,8 @@ describe CharAttributesController, :type => :controller do
     context "successful update" do
       it "redirect to character type page" do
         allow(@char_attribute).to receive(:update).and_return(true)
-        put :update, :char_type_id => 46, :id => 2, :char_attribute => { :title => "Rogue", :value => "20" }
+        put :update, :char_type_id => 46, :id => 2, 
+                     :char_attribute => { :title => "Rogue", :value => "20" }
 
         expect(response).to redirect_to(char_type_path(@char_type))
       end
@@ -117,7 +122,8 @@ describe CharAttributesController, :type => :controller do
     context "failed update" do
       it "should render 'edit' template" do
         allow(@char_attribute).to receive(:update).and_return(false)
-        put :update, :char_type_id => 46, :id => 2, :char_attribute => { :title => "Rogue", :value => "20" }
+        put :update, :char_type_id => 46, :id => 2, 
+                     :char_attribute => { :title => "Rogue", :value => "20" }
 
         expect(response).to render_template("edit")
       end
@@ -150,11 +156,13 @@ describe CharAttributesController, :type => :controller do
   end
 
   def find_char_type_stub
-    allow(@user).to receive_message_chain(:char_types, :find_by_id).and_return(@char_type)
+    allow(@user).to receive_message_chain(:char_types, 
+                                          :find_by_id).and_return(@char_type)
   end
 
   def find_char_attribute_stub
-    allow(@char_type).to receive_message_chain(:char_attributes, :find_by_id).and_return(@char_attribute)
+    allow(@char_type).to receive_message_chain(:char_attributes, 
+                                               :find_by_id).and_return(@char_attribute)
   end
 
   def valid_parameters
