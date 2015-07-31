@@ -1,25 +1,27 @@
 require 'rails_helper'
 
 describe CharAttributesController, :type => :controller do
-  include_context "user logs in"
-  # have legit user, char_type and char_attribute mocks
-  before do
 
-    @user = double(User)
+  include_context "user logs in"
+  before do
     @char_type = double(CharType)
     @char_attribute = double(CharAttribute)
-
-    allow(controller).to receive(:current_user).and_return(@user)
-    allow(controller).to receive(:authenticate_user!)
-
   end
 
-  describe "#show" do
+  describe "GET show" do
 
     before do
       find_char_type_stub
       find_char_attribute_stub
       get :show, valid_parameters
+    end
+
+    it "should assign character type" do
+      expect(assigns(:char_type)).to eql(@char_type)
+    end
+
+    it "should assign character attribute" do
+      expect(assigns(:char_attribute)).to eql(@char_attribute)
     end
 
     it "should render template show" do
@@ -29,10 +31,9 @@ describe CharAttributesController, :type => :controller do
     it "should have successful response" do
       expect(response).to be_success
     end
-
   end
 
-  describe "#new" do
+  describe "GET new" do
 
     before do
       find_char_type_stub
@@ -41,21 +42,37 @@ describe CharAttributesController, :type => :controller do
       get :new, :char_type_id => 46
     end
 
-    it "should make a new character attribute" do
+    it "should assign character type" do
+      expect(assigns(:char_type)).to eql(@char_type)
+    end
+
+    it "should assign new character attribute" do
       expect(assigns(:char_attribute)).to eql(@char_attribute)
     end
 
     it "should have a successful response" do
       expect(response).to be_success
     end
+
+    it "should render template new" do
+      expect(response).to render_template("new")
+    end
   end
 
-  describe "#edit" do
+  describe "GET edit" do
 
     before do
       find_char_type_stub
       find_char_attribute_stub
       get :edit, valid_parameters
+    end
+
+    it "should assign character type" do
+      expect(assigns(:char_type)).to eql(@char_type)
+    end
+
+    it "should assign new character attribute" do
+      expect(assigns(:char_attribute)).to eql(@char_attribute)
     end
 
     it "should have successful response" do
@@ -67,7 +84,7 @@ describe CharAttributesController, :type => :controller do
     end
   end
 
-  describe "#create" do
+  describe "POST create" do
 
     before do
       find_char_type_stub
@@ -83,7 +100,11 @@ describe CharAttributesController, :type => :controller do
                       :char_attribute => { :title => "Rogue", :value => "20" }
       end
 
-      it "should create new attribute" do
+      it "should assign character type" do
+        expect(assigns(:char_type)).to eql(@char_type)
+      end
+
+      it "should assign new attribute" do
         expect(assigns(:char_attribute)).to eql(@char_attribute)
       end
 
@@ -104,7 +125,11 @@ describe CharAttributesController, :type => :controller do
                       :char_attribute => { :title => "Rogue", :value => "20" }
       end
 
-      it "should create new attribute" do
+      it "should assign character type" do
+        expect(assigns(:char_type)).to eql(@char_type)
+      end
+
+      it "should assign new attribute" do
         expect(assigns(:char_attribute)).to eql(@char_attribute)
       end
 
@@ -119,7 +144,7 @@ describe CharAttributesController, :type => :controller do
 
   end
 
-  describe "#update" do
+  describe "PUT update" do
 
     before do
       find_char_type_stub
@@ -131,6 +156,14 @@ describe CharAttributesController, :type => :controller do
         allow(@char_attribute).to receive(:update).and_return(true)
         put :update, :char_type_id => 46, :id => 2, 
                      :char_attribute => { :title => "Rogue", :value => "20" }
+      end
+
+      it "should assign character type" do
+        expect(assigns(:char_type)).to eql(@char_type)
+      end
+
+      it "should assign new character attribute" do
+        expect(assigns(:char_attribute)).to eql(@char_attribute)
       end
 
       it "redirects to character type page" do
@@ -149,6 +182,14 @@ describe CharAttributesController, :type => :controller do
                      :char_attribute => { :title => "Rogue", :value => "20" }
       end
 
+      it "should assign character type" do
+        expect(assigns(:char_type)).to eql(@char_type)
+      end
+
+      it "should assign new character attribute" do
+        expect(assigns(:char_attribute)).to eql(@char_attribute)
+      end
+
       it "should render 'edit' template" do
         expect(response).to render_template("edit")
       end
@@ -159,12 +200,22 @@ describe CharAttributesController, :type => :controller do
     end
   end
 
-  describe "#destroy" do
+  describe "DELETE destroy" do
 
     before do
       find_char_type_stub
       find_char_attribute_stub
       allow(@char_attribute).to receive(:destroy)
+    end
+
+    it "should assign character type" do
+      delete_destroy
+      expect(assigns(:char_type)).to eql(@char_type)
+    end
+
+    it "should assign new character attribute" do
+      delete_destroy
+      expect(assigns(:char_attribute)).to eql(@char_attribute)
     end
 
     it "should destroy attribute" do
@@ -176,7 +227,6 @@ describe CharAttributesController, :type => :controller do
       delete_destroy
       expect(response).to redirect_to(char_types_path)
     end
-
   end
 
 

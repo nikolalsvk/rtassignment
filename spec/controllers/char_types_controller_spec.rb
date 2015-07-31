@@ -14,7 +14,7 @@ RSpec.describe CharTypesController, :type => :controller do
       get :index, :page => "bla"
     end
 
-    it "should assign @char_types" do
+    it "should assign character types" do
       expect(assigns(:char_types)).to eql(@char_types)
     end
 
@@ -31,6 +31,10 @@ RSpec.describe CharTypesController, :type => :controller do
     before do
       find_char_type_stub
       get :show, :id => 46
+    end
+
+    it "should assign character type" do
+      expect(assigns(:char_type)).to eql(@char_type)
     end
 
     it "should render template show" do
@@ -65,6 +69,10 @@ RSpec.describe CharTypesController, :type => :controller do
     before do
       find_char_type_stub
       get :edit, :id => 46
+    end
+
+    it "should assign character type" do
+      expect(assigns(:char_type)).to eql(@char_type)
     end
 
     it "should render template edit" do
@@ -137,6 +145,10 @@ RSpec.describe CharTypesController, :type => :controller do
         patch :update, :id => 46, :char_type => { :title => "Rogue" }
       end
 
+      it "should assign character type" do
+        expect(assigns(:char_type)).to eql(@char_type)
+      end
+
       it "redirects to character type page" do
         expect(response).to redirect_to(char_type_path(@char_type))
       end
@@ -150,6 +162,10 @@ RSpec.describe CharTypesController, :type => :controller do
       before do
         allow(@char_type).to receive(:update).and_return(false)
         patch :update, :id => 46, :char_type => { :title => "Rogue" }
+      end
+
+      it "should assign character type" do
+        expect(assigns(:char_type)).to eql(@char_type)
       end
 
       it "renders template edit" do
@@ -166,6 +182,12 @@ RSpec.describe CharTypesController, :type => :controller do
     before do
       find_char_type_stub
       allow(@char_type).to receive(:destroy)
+    end
+
+    it "should assign character type" do
+      delete_destroy
+
+      expect(assigns(:char_type)).to eql(@char_type)
     end
 
     it "should destroy character type" do

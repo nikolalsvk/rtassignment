@@ -14,7 +14,7 @@ Rpgapp::Application.routes.draw do
     end
     #resource :char_types, shallow: true do
     # resource :char_attributes
-      
+
     #end
     root 'welcome#index'
   
