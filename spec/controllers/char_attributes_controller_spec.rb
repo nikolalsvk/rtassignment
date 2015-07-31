@@ -98,6 +98,9 @@ describe CharAttributesController, :type => :controller do
         expect(response).to render_template("new")
       end
 
+      it "should have successful response" do
+        expect(response).to be_success
+      end
     end
 
   end
@@ -110,22 +113,34 @@ describe CharAttributesController, :type => :controller do
     end
 
     context "successful update" do
-      it "redirect to character type page" do
+      before do
         allow(@char_attribute).to receive(:update).and_return(true)
         put :update, :char_type_id => 46, :id => 2, 
                      :char_attribute => { :title => "Rogue", :value => "20" }
+      end
 
+      it "redirects to character type page" do
         expect(response).to redirect_to(char_type_path(@char_type))
+      end
+
+      it "should have http status redirect" do
+        expect(response).to have_http_status(302)
       end
     end
 
     context "failed update" do
-      it "should render 'edit' template" do
+      before do
         allow(@char_attribute).to receive(:update).and_return(false)
         put :update, :char_type_id => 46, :id => 2, 
                      :char_attribute => { :title => "Rogue", :value => "20" }
+      end
 
+      it "should render 'edit' template" do
         expect(response).to render_template("edit")
+      end
+
+      it "should have successful response" do
+        expect(response).to be_success
       end
     end
   end
