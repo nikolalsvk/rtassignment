@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe CharAttributesController, :type => :controller do
+  include_context "user logs in"
   # have legit user, char_type and char_attribute mocks
   before do
 
@@ -21,6 +22,10 @@ describe CharAttributesController, :type => :controller do
       get :show, valid_parameters
     end
 
+    it "should render template show" do
+      expect(response).to render_template("show")
+    end
+
     it "should have successful response" do
       expect(response).to be_success
     end
@@ -31,15 +36,18 @@ describe CharAttributesController, :type => :controller do
 
     before do
       find_char_type_stub
+      allow(@char_type).to receive_message_chain(:char_attributes, 
+                                                 :new).and_return(@char_attribute)
+      get :new, :char_type_id => 46
     end
 
     it "should make a new character attribute" do
-      allow(@char_type).to receive_message_chain(:char_attributes, :new)
-      get :new, :char_type_id => 46
-
-      expect(response).to be_success
+      expect(assigns(:char_attribute)).to eql(@char_attribute)
     end
 
+    it "should have a successful response" do
+      expect(response).to be_success
+    end
   end
 
   describe "#edit" do
@@ -54,6 +62,9 @@ describe CharAttributesController, :type => :controller do
       expect(response).to be_success
     end
 
+    it "should render template edit" do
+      expect(response).to render_template("edit")
+    end
   end
 
   describe "#create" do
@@ -80,6 +91,9 @@ describe CharAttributesController, :type => :controller do
         expect(response).to redirect_to(char_type_path(@char_type))
       end
 
+      it "should have http status redirect" do
+        expect(response).to have_http_status(:redirect)
+      end
     end
 
     context "character attribute is not valid" do
@@ -124,7 +138,7 @@ describe CharAttributesController, :type => :controller do
       end
 
       it "should have http status redirect" do
-        expect(response).to have_http_status(302)
+        expect(response).to have_http_status(:redirect)
       end
     end
 
