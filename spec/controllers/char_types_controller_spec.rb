@@ -7,7 +7,7 @@ RSpec.describe CharTypesController, :type => :controller do
     @char_type = double(CharType)
   end
 
-  describe "#index" do
+  describe "GET index" do
     before do
       allow(@user).to receive_message_chain(:char_types,
                                             :by_title, :page, :per).and_return(@char_types)
@@ -27,7 +27,7 @@ RSpec.describe CharTypesController, :type => :controller do
     end
   end
 
-  describe "#show" do
+  describe "GET show" do
     before do
       find_char_type_stub
       get :show, :id => 46
@@ -46,7 +46,7 @@ RSpec.describe CharTypesController, :type => :controller do
     end
   end
 
-  describe "#new" do
+  describe "GET new" do
     before do
       allow(controller).to receive_message_chain(:current_user, :char_types, :new).and_return(@char_type)
       get :new
@@ -65,7 +65,7 @@ RSpec.describe CharTypesController, :type => :controller do
     end
   end
 
-  describe "#edit" do
+  describe "GET edit" do
     before do
       find_char_type_stub
       get :edit, :id => 46
@@ -84,7 +84,7 @@ RSpec.describe CharTypesController, :type => :controller do
     end
   end
 
-  describe "#create" do
+  describe "POST create" do
 
     before(:each) do
         allow(controller).to receive(:current_user).and_return(@user)
@@ -134,7 +134,7 @@ RSpec.describe CharTypesController, :type => :controller do
     end
   end
 
-  describe "#update" do
+  describe "PATCH update" do
     before do
       find_char_type_stub
     end
@@ -178,7 +178,7 @@ RSpec.describe CharTypesController, :type => :controller do
     end
   end
 
-  describe "#destroy" do
+  describe "DELETE destroy" do
     before do
       find_char_type_stub
       allow(@char_type).to receive(:destroy)
