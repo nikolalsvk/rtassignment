@@ -6,7 +6,6 @@ class CharTypesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -14,7 +13,6 @@ class CharTypesController < ApplicationController
   end
 
   def edit
-
   end
 
   def create
@@ -48,6 +46,5 @@ class CharTypesController < ApplicationController
 
   def find_char_type
     @char_type = current_user.char_types.find_by_id(params[:id])
-    render 'public/404' unless @char_type
   end
 end

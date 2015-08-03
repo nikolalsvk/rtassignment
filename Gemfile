@@ -54,13 +54,14 @@ group :production, :staging do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails'
   gem 'capybara-webkit', '~> 1.6.0'
   gem 'shoulda-matchers'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
+  gem "byebug"
 end
 
 # Use ActiveModel has_secure_password
