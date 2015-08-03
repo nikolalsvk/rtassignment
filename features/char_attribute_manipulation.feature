@@ -1,7 +1,7 @@
 Feature: Character attribute manipulation
 
   Background: User logs in
-    Given a user is signed in
+    Given I am signed in
     And there's a character type named "Rogue"
     And character type Rogue has an attribute "Dexterity"
     And I am at "Rogue" character page

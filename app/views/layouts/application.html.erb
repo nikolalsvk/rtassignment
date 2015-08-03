@@ -67,10 +67,11 @@
         
         <ul class="nav navbar-nav">
         <li class="active"><%= link_to "All characters", char_types_path %></li>
-              <li><%= link_to "New character", new_char_type_path %></li>
-          <% if user_signed_in? %>
-            <li class="pull-right"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-          <% end %>
+        <li><%= link_to "New character", new_char_type_path %></li>
+        <li><%= link_to "COMBAT", char_combats_path %></li>
+        <% if user_signed_in? %>
+          <li class="pull-right"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+        <% end %>
         </ul>
       </div>
     </nav>

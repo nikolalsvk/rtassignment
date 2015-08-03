@@ -1,0 +1,13 @@
+<div class="col-sm-offset-1 col-sm-10">  
+  <h1>Character combats</h1>
+</div>
+
+<%= form_for :char_combat, :url => char_combats_path, :html => { :class => "form-horizontal" } do |form| %>
+  <%= form.collection_select("first_char", 
+                             current_user.char_types, :id, :title, { include_blank: true }) %>
+
+  <%= form.collection_select("second_char",
+                             current_user.char_types, :id, :title, { include_blank: true }) %>
+
+  <%= form.submit "Fight" %>
+<% end %>
