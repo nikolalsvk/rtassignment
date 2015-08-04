@@ -6,5 +6,5 @@ Feature: Adding a new charater type
   Scenario: Add new character
     Given I am at new character page
     When I fill in the form for adding new character
-    And I click "Save Char type"
+    And I click "Submit character type"
     Then I should see my new character

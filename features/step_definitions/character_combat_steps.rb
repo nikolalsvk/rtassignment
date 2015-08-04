@@ -7,7 +7,7 @@ Given(/^I have two valid characters$/) do
 end
 
 When(/^I choose two characters to combat$/) do
-  visit char_combats_path
+  visit new_char_combat_path
 
   expect(page).to have_content("Rogue")
   expect(page).to have_content(@user.email)
