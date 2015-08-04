@@ -47,4 +47,18 @@ RSpec.describe CharCombatsController, type: :controller do
       expect(response).to be_success
     end
   end
+
+  describe "GET new" do
+    before do
+      get :new
+    end
+
+    it "should render new template" do
+      expect(response).to render_template("new")
+    end
+
+    it "should have successful response" do
+      expect(response).to be_success
+    end
+  end
 end

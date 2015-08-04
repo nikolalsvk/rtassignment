@@ -12,6 +12,9 @@ class CharCombatsController < ApplicationController
     redirect_to char_combats_path(:winner => @winner)
   end
 
+  def new
+  end
+
   private
   def combat
     @first_char.attack_points > @second_char.attack_points ? @first_char : @second_char
