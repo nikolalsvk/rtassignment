@@ -33,4 +33,18 @@ RSpec.describe CharCombatsController, type: :controller do
       expect(response).to have_http_status(:redirect)
     end
   end
+
+  describe "GET index" do
+    before do
+      get :index
+    end
+
+    it "should render index template" do
+      expect(response).to render_template("index")
+    end
+
+    it "should have successful response" do
+      expect(response).to be_success
+    end
+  end
 end

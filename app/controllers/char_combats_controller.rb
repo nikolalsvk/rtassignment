@@ -1,5 +1,8 @@
 class CharCombatsController < ApplicationController
 
+  def index
+  end
+
   def create
     find_first_char
     find_second_char

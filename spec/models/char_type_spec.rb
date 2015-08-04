@@ -19,4 +19,17 @@ describe CharType do
     
     expect(char_type).to be_valid
   end
+
+  describe "#attack_points" do
+    before do
+      @char_type = CharType.new(:title => "Test")
+      @char_type.char_attributes.build(:title => "Test", :value => "55")
+
+      @char_type.save
+    end
+
+    it "should return valid attack points" do
+      expect(@char_type.attack_points).to eql(56)
+    end
+  end
 end
