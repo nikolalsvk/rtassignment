@@ -99,7 +99,7 @@ RSpec.describe CharTypesController, :type => :controller do
         post :create, :char_type => { :title => "Rogue" }
       end
 
-      it "creates new character type" do
+      it "assigns new character type" do
         expect(assigns(:char_type)).to eql(@char_type)
       end
 

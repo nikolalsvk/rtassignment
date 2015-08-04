@@ -14,4 +14,14 @@ class CharType < ActiveRecord::Base
     }
     
   scope :by_title, -> { order("title") }
+
+  def attack_points
+    attr_sum = 0;
+    
+    self.char_attributes.each do |attribute|
+      attr_sum += attribute.value
+    end
+
+    attr_sum / self.char_attributes.count + self.char_attributes.count
+  end
 end

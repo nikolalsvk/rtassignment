@@ -1,0 +1,26 @@
+<div class="col-sm-offset-1 col-sm-10">  
+  <h1>Character combats</h1>
+</div>
+
+<%= form_for :char_combat, :url => char_combats_path, :html => { :class => "form-horizontal" } do |form| %>
+  <div class="field form-group">
+    <%= form.label :first_char, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.collection_select("first_char", 
+                                 current_user.char_types, :id, :title, { include_blank: true }) %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= form.label :second_char, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.collection_select("second_char",
+                                 current_user.char_types, :id, :title, { include_blank: true }) %>
+    </div>
+  </div>
+  
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">  
+      <%= form.submit "Fight" %>
+    </div>
+  </div>
+<% end %>

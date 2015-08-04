@@ -12,10 +12,9 @@ Rpgapp::Application.routes.draw do
     resources :char_types do
       resources :char_attributes
     end
-    #resource :char_types, shallow: true do
-    # resource :char_attributes
 
-    #end
+    resources :char_combats
+
     root 'welcome#index'
   
   # Example of regular route:

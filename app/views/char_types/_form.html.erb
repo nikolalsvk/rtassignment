@@ -1,4 +1,5 @@
-<%= form_for :char_type, url: char_types_path, :html => { :class => "form-horizontal", :multipart => true } do |f| %>
+<%= form_for :char_type, :url => char_types_path, 
+                         :html => { :class => "form-horizontal", :multipart => true } do |f| %>
   <% if @char_type.errors.any? %>
     <div id="error_explanation">
       <p>
@@ -29,7 +30,7 @@
   
   <div class="actions form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit %>
+      <%= f.submit "Submit character type" %>
     </div>
   </div>
 <% end %>

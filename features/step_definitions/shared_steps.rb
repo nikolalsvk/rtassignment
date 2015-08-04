@@ -1,4 +1,4 @@
-Given(/^a user is signed in$/) do
+Given(/^I am signed in$/) do
   steps %Q{
     Given a valid user
     When I go to the login page
@@ -19,5 +19,5 @@ When(/^I click "(.*?)"$/) do |save_button|
 end
 
 Then(/^I should see "(.*?)"$/) do |msg|
-  page.should have_content(msg)
+  expect(page).to have_content(msg)
 end

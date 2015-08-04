@@ -1,7 +1,7 @@
 Feature: Character type manipulation
 
   Background: User is logged in and on page
-    Given a user is signed in
+    Given I am signed in
     And there's a character type named "Rogue"
     When I am on the character types page
 
