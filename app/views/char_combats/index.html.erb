@@ -1,7 +1,18 @@
-  
-<div class="col-sm-offset-1 col-sm-10">  
-  <h1>And the winner is:</h1>
+<h1>Borbe bikova</h1>
 
+<%= link_to "New combat", new_char_combat_path %>
 
-  <%= params[:winner] %>
-</div>
+<table class="table table-hover">
+  <tr class="info">
+    <th>Fight number</th>
+    <th>Winner</th>
+    <th>Loser</th>
+  </tr>
+  <% @char_combats.each do |combat| %>
+    <tr>
+      <td>Fight <%= combat.id %></td>
+      <td><%= combat.winner %></td>
+      <td><%= combat.loser %></td>
+    </tr>
+  <% end %>
+</table>
