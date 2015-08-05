@@ -13,6 +13,7 @@
       <td>Fight <%= combat.id %></td>
       <td><%= combat.winner %></td>
       <td><%= combat.loser %></td>
+      <td><%= link_to "Show", char_combat_path(combat) %></td>
     </tr>
   <% end %>
 </table>
