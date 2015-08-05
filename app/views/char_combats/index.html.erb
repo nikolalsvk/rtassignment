@@ -8,12 +8,17 @@
     <th>Winner</th>
     <th>Loser</th>
     <th></th>
+    <th></th>
   </tr>
   <% @char_combats.each do |combat| %>
     <tr>
       <td>Fight <%= combat.id %></td>
       <td><%= combat.winner %></td>
-      <td><%= combat.loser %></td>
+      <td><% if combat.winner == combat.first_combatant %>
+            <%= combat.second_combatant %>
+          <% else %>
+            <%= combat.first_combatant %>
+          <% end %></td>
       <td><%= link_to "Show", char_combat_path(combat) %></td>
       <td><%= link_to "Destroy", char_combat_path(combat), :method => :delete,
               data: { confirm: 'Are you sure?' } %>

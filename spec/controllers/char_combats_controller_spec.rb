@@ -95,12 +95,6 @@ RSpec.describe CharCombatsController, type: :controller do
   end
 
   describe "DELETE destroy" do
-    it "should destroy a character combat" do
-      expect(@char_combat).to receive(:destroy)
-
-      delete :destroy, :id => 46
-    end
-
     before do
       allow(CharCombat).to receive(:find_by_id).and_return(@char_combat)
       allow(@char_combat).to receive(:destroy)
@@ -110,6 +104,12 @@ RSpec.describe CharCombatsController, type: :controller do
 
     it "should assign character combat" do
       expect(assigns(:char_combat)).to eql(@char_combat)
+    end
+
+    it "should destroy a character combat" do
+      expect(@char_combat).to receive(:destroy)
+
+      delete :destroy, :id => 46
     end
 
     it "should redirect to combat history page" do

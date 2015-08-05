@@ -179,12 +179,6 @@ RSpec.describe CharTypesController, :type => :controller do
   end
 
   describe "DELETE destroy" do
-    it "should destroy character type" do
-      expect(@char_type).to receive(:destroy)
-
-      delete_destroy
-    end
-
     before do
       find_char_type_stub
       allow(@char_type).to receive(:destroy)
@@ -194,6 +188,12 @@ RSpec.describe CharTypesController, :type => :controller do
 
     it "should assign character type" do
       expect(assigns(:char_type)).to eql(@char_type)
+    end
+
+    it "should destroy character type" do
+      expect(@char_type).to receive(:destroy)
+
+      delete_destroy
     end
 
     it "should redirect to character types page" do

@@ -6,5 +6,9 @@
 
   <h1>Loser is:</h1>
 
-  <%= @char_combat.loser %>
+  <% if @char_combat.winner == @char_combat.first_combatant %>
+    <%= @char_combat.second_combatant %>
+  <% else %>
+    <%= @char_combat.first_combatant %>
+  <% end %>
 </div>

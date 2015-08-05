@@ -53,7 +53,6 @@ end
 
 # Possible values are :truncation and :transaction
 Capybara.javascript_driver = :webkit
-Capybara.default_wait_time = 5
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation

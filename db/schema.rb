@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(version: 20150804140800) do
   add_index "char_attributes", ["char_type_id"], name: "index_char_attributes_on_char_type_id", using: :btree
 
   create_table "char_combats", force: true do |t|
+    t.string   "first_combatant"
+    t.string   "second_combatant"
     t.string   "winner"
-    t.string   "loser"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

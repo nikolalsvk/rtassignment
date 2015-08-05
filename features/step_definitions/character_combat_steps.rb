@@ -27,9 +27,9 @@ Given(/^I have multiple characters$/) do
 end
 
 Given(/^characters have fighted before$/) do
-  @combat_one = CharCombat.create!({ :winner => "Wizard", :loser => "Cleric" })
-  @combat_two = CharCombat.create!({ :winner => "Cleric", :loser => "Rogue" })
-  @combat_three = CharCombat.create!({ :winner => "Rogue", :loser => "Paladin" })
+  @combat_one = CharCombat.create!({ :first_combatant => @char_three, :second_combatant => @char_four })
+  @combat_two = CharCombat.create!({ :first_combatant => @char_four, :second_combatant => @char_one })
+  @combat_three = CharCombat.create!({ :first_combatant => @char_one, :second_combatant => @char_two })
 end
 
 When(/^I go to combats page$/) do
