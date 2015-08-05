@@ -1,5 +1,7 @@
 class CharCombatsController < ApplicationController
 
+  before_action :find_char_combat, :only => [ :show, :destroy ]
+
   def index
     @char_combats = CharCombat.all
   end
@@ -20,6 +22,12 @@ class CharCombatsController < ApplicationController
     @char_combat = CharCombat.find_by_id(params[:id])
   end
 
+  def destroy
+    @char_combat.destroy
+
+    redirect_to char_combats_path
+  end
+
   private
   def combat
     @first_char.attack_points > @second_char.attack_points ? @first_char : @second_char
@@ -36,5 +44,9 @@ class CharCombatsController < ApplicationController
   def who_won(winner)
     winner == @first_char ? { :winner => @first_char.title, :loser => @second_char.title } :
                             { :winner => @second_char.title, :loser => @first_char.title }
+  end
+
+  def find_char_combat
+    @char_combat = CharCombat.find_by_id(params[:id])
   end
 end

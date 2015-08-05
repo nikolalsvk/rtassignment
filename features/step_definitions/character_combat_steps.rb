@@ -55,4 +55,11 @@ Then(/^I should see result of the fight$/) do
   expect(page).to have_content("Loser is:")
 end
 
+Then(/^I shouldn't see the fight$/) do
+  expect(page).to have_no_content("Fight " + @combat_one.id.to_s)
+  expect(page).to have_content("Fight " + @combat_two.id.to_s)
+  expect(page).to have_content("Fight " + @combat_three.id.to_s)
+end
+
+
 

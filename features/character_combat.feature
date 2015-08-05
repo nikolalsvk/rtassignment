@@ -23,3 +23,9 @@ Feature: Character combat
     And I am on combat history page
     When I click on "Show" link
     Then I should see result of the fight
+
+  Scenario: Delete fight from history
+    Given characters have fighted before
+    And I am on combat history page
+    When I click on "Destroy" link
+    Then I shouldn't see the fight
