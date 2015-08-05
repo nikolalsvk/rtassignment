@@ -24,4 +24,9 @@ class CharType < ActiveRecord::Base
 
     attr_sum / self.char_attributes.count + self.char_attributes.count
   end
+
+  def get_combat_history
+    CharCombat.where("first_combatant = ? OR second_combatant = ?",
+                     self.title, self.title).to_a
+  end
 end

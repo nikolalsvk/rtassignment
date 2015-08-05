@@ -20,6 +20,10 @@
   </div>
 <% end %>
 
+<% @char_combats = @char_type.get_combat_history %>
+
+<%= render "char_combats/char_combats" %>
+
 <div class="col-sm-offset-0 col-sm-10">
   <%= link_to 'Back', char_types_path %>
 </div>
