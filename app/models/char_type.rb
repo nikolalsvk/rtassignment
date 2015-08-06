@@ -4,6 +4,7 @@ class CharType < ActiveRecord::Base
   mount_uploader :avatar, PictureUploader
   belongs_to :user
   has_many :char_attributes, :dependent => :destroy
+  has_many :char_combats
   
   validates :title, :presence => true,
                     :length => { :minimum => 3 }
@@ -26,7 +27,7 @@ class CharType < ActiveRecord::Base
   end
 
   def get_combat_history
-    CharCombat.where("first_combatant = ? OR second_combatant = ?",
-                     self.title, self.title).to_a
+    CharCombat.where("first_combatant_id = ? OR second_combatant_id = ?",
+                     self, self).to_a
   end
 end

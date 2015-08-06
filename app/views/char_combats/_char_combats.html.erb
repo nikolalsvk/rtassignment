@@ -6,18 +6,14 @@
     <th></th>
     <th></th>
   </tr>
-  <% @char_combats.each do |combat| %>
+  <% @char_combats.each do |char_combat| %>
     <tr>
-      <td>Fight <%= combat.id %></td>
-      <td><%= combat.winner %></td>
-      <td><% if combat.winner == combat.first_combatant %>
-            <%= combat.second_combatant %>
-          <% else %>
-            <%= combat.first_combatant %>
-          <% end %></td>
-      <td><%= link_to "Show", char_combat_path(combat) %></td>
-      <td><%= link_to "Destroy", char_combat_path(combat), :method => :delete,
-              data: { confirm: 'Are you sure?' } %>
+      <td>Fight <%= char_combat.id %></td>
+      <td><%= render "char_combats/winner", :char_combat => char_combat %></td>
+      <td><%= render "char_combats/loser", :char_combat => char_combat %></td>
+      <td><%= link_to "Show", char_combat_path(char_combat) %></td>
+      <td><%= link_to "Destroy", char_combat_path(char_combat), :method => :delete,
+              :data => { :confirm => 'Are you sure?' } %>
     </tr>
   <% end %>
 </table>

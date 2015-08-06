@@ -1,9 +1,9 @@
 class CreateCharCombats < ActiveRecord::Migration
   def change
     create_table :char_combats do |t|
-      t.string :first_combatant
-      t.string :second_combatant
-      t.string :winner
+      t.integer :first_combatant_id
+      t.integer :second_combatant_id
+      t.integer :winner
 
       t.timestamps
     end
