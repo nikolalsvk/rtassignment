@@ -13,6 +13,8 @@ class CharType < ActiveRecord::Base
     :file_size => {
       :maximum => 1.0.megabytes.to_i
     }
+
+  before_destroy :destroy_char_combat_history
     
   scope :by_title, -> { order("title") }
 
@@ -28,6 +30,10 @@ class CharType < ActiveRecord::Base
 
   def get_combat_history
     CharCombat.where("first_combatant_id = ? OR second_combatant_id = ?",
-                     self, self).to_a
+                     self, self)
+  end
+
+  def destroy_char_combat_history
+    get_combat_history.delete_all
   end
 end
