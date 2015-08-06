@@ -1,4 +1,8 @@
 class CharCombat < ActiveRecord::Base
+
+  belongs_to :first_combatant, :class_name => CharType.to_s
+  belongs_to :second_combatant, :class_name => CharType.to_s
+
   validates :first_combatant, :presence => true
   validates :second_combatant, :presence => true
 
@@ -6,9 +10,7 @@ class CharCombat < ActiveRecord::Base
 
   def combat
     self.winner = first.attack_points > second.attack_points ? 
-      first.title : second.title
-    self.first_combatant = first.title
-    self.second_combatant = second.title
+      first.id : second.id
   end
 
   def first

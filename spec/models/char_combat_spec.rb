@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe CharCombat, type: :model do
   it { should have_db_column(:winner) }
-  it { should have_db_column(:first_combatant) }
-  it { should have_db_column(:second_combatant) }
+  it { should have_db_column(:first_combatant_id) }
+  it { should have_db_column(:second_combatant_id) }
   it { should have_db_column(:created_at) }
   it { should have_db_column(:updated_at) }
 
@@ -26,7 +26,7 @@ RSpec.describe CharCombat, type: :model do
     end
 
     it "should determine a winner" do
-      expect(@char_combat.winner).to eql(@char_two.title)
+      expect(@char_combat.winner).to eql(@char_two.id)
     end
   end
 end

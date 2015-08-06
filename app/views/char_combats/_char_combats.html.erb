@@ -1,0 +1,19 @@
+<table class="table table-hover">
+  <tr class="info">
+    <th>Fight number</th>
+    <th>Winner</th>
+    <th>Loser</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @char_combats.each do |char_combat| %>
+    <tr>
+      <td>Fight <%= char_combat.id %></td>
+      <td><%= render "char_combats/winner", :char_combat => char_combat %></td>
+      <td><%= render "char_combats/loser", :char_combat => char_combat %></td>
+      <td><%= link_to "Show", char_combat_path(char_combat) %></td>
+      <td><%= link_to "Destroy", char_combat_path(char_combat), :method => :delete,
+              :data => { :confirm => 'Are you sure?' } %>
+    </tr>
+  <% end %>
+</table>

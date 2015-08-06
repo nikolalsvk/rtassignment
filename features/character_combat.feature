@@ -8,7 +8,7 @@ Feature: Character combat
     When I choose two characters to combat
     Then I should see is the combat winner
 
-  Scenario: View history
+  Scenario: View combat history of all characters
     Given I have multiple characters
     And characters have fighted before
     When I go to combats page

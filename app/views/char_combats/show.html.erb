@@ -1,14 +1,9 @@
-  
 <div class="col-sm-offset-1 col-sm-10">  
   <h1>And the winner is:</h1>
 
-  <%= @char_combat.winner %>
+  <%= render 'winner', :char_combat => @char_combat %>
 
   <h1>Loser is:</h1>
 
-  <% if @char_combat.winner == @char_combat.first_combatant %>
-    <%= @char_combat.second_combatant %>
-  <% else %>
-    <%= @char_combat.first_combatant %>
-  <% end %>
+  <%= render 'loser', :char_combat => @char_combat %>
 </div>
