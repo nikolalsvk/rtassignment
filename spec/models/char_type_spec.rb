@@ -57,7 +57,7 @@ describe CharType do
     end
 
     it "should find characters combat history" do
-      expect(@char_one.get_combat_history).to eql(@char_combats)
+      expect(@char_one.get_combat_history.to_a).to eql(@char_combats)
     end
   end
 end
