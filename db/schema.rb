@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150804140800) do
     t.integer  "first_combatant_id"
     t.integer  "second_combatant_id"
     t.integer  "winner"
+    t.boolean  "challenge"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

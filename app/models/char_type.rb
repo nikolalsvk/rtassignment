@@ -28,12 +28,20 @@ class CharType < ActiveRecord::Base
     attr_sum / self.char_attributes.count + self.char_attributes.count
   end
 
-  def get_combat_history
-    CharCombat.where("first_combatant_id = ? OR second_combatant_id = ?",
-                     self, self)
+  def destroy_char_combat_history
+    CharCombat.delete_all
   end
 
-  def destroy_char_combat_history
-    get_combat_history.delete_all
+  def combats
+    CharCombat.where("first_combatant_id != ? OR second_combatant_id != ?", 
+          self, self)
+  end
+
+  def challenges
+    combats.where(:challenge => true)
+  end
+
+  def combat_history
+    combats.where(:challenge => false)
   end
 end

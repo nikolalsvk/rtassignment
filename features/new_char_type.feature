@@ -8,3 +8,4 @@ Feature: Adding a new charater type
     When I fill in the form for adding new character
     And I click "Submit character type"
     Then I should see my new character
+
