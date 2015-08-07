@@ -11,4 +11,4 @@ Feature: Adding new character attribute
     And I fill in the form
     And I click "Create Char attribute"
     Then I should see the new attribute
-    
+

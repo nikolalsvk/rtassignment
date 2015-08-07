@@ -37,7 +37,11 @@ class CharType < ActiveRecord::Base
           self, self)
   end
 
-  def challenges(bool)
-    combats.where(:challenge => bool)
+  def challenges
+    combats.where(:challenge => true)
+  end
+
+  def combat_history
+    combats.where(:challenge => false)
   end
 end

@@ -1,6 +1,7 @@
 class CharCombatsController < ApplicationController
 
   before_action :find_char_combat, :only => [ :show, :destroy, :update ]
+  before_action :find_char_type, :only => [ :update ]
 
   def index
     @char_combats = combats(false)
@@ -31,7 +32,7 @@ class CharCombatsController < ApplicationController
   end
 
   def update
-    find_char_type
+    
     if @char_combat.first_combatant
       @char_combat.second_combatant = @char_type
     else

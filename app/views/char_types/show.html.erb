@@ -20,13 +20,13 @@
   </div>
 <% end %>
 
-<% @char_combats = @char_type.challenges(false) %>
+<% @char_combats = @char_type.combat_history %>
 
 <strong>Previous fights:</strong>
 <%= render "char_combats/char_combats" %>
 
 <strong>Open challenges:</strong>
-<%= render "char_combats/combat_challenges", :combat_challenges => @char_type.challenges(true) %>
+<%= render "char_combats/combat_challenges", :combat_challenges => @char_type.challenges %>
 
 <div class="col-sm-offset-0 col-sm-10">
   <%= link_to 'Back', char_types_path %>
