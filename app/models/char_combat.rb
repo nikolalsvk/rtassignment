@@ -9,7 +9,7 @@ class CharCombat < ActiveRecord::Base
   before_save :open_challenge, :combat
 
   def open_challenge
-    self.challenge = second == nil || first == nil
+    self.challenge = (second == nil || first == nil)
     nil
   end
 
