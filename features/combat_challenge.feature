@@ -13,3 +13,4 @@ Feature: Combat challenges
     When I go to my character page
     And I click on "Join" link
     Then I should see who won the challenge
+    

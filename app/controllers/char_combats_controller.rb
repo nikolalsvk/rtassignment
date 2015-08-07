@@ -60,10 +60,10 @@ class CharCombatsController < ApplicationController
   end
 
   def combat_challenges
-    CharCombat.where("challenge = ?", true)
+    CharCombat.where(:challenge => true)
   end
 
   def combat_history
-    CharCombat.where("challenge = ?", false)
+    CharCombat.where(:challenge => false)
   end
 end

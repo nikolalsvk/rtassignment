@@ -4,7 +4,7 @@ class CreateCharCombats < ActiveRecord::Migration
       t.integer :first_combatant_id
       t.integer :second_combatant_id
       t.integer :winner
-      t.boolean	:challenge
+      t.boolean :challenge
 
       t.timestamps
     end

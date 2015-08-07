@@ -3,8 +3,8 @@ class CharCombat < ActiveRecord::Base
   belongs_to :first_combatant, :class_name => CharType.to_s
   belongs_to :second_combatant, :class_name => CharType.to_s
 
-  validates :first_combatant, :presence => true, :if => lambda { second_combatant == nil }
-  validates :second_combatant, :presence => true, :if => lambda { first_combatant == nil }
+  validates :first_combatant, :presence => true, :if => :check_second
+  validates :second_combatant, :presence => true, :if => :check_first
 
   before_save :open_challenge, :combat
 
@@ -25,5 +25,13 @@ class CharCombat < ActiveRecord::Base
 
   def second
     self.second_combatant
+  end
+
+  def check_second
+    lambda { second_combatant == nil }
+  end
+
+  def check_first
+    lambda { first_combatant == nil }
   end
 end
