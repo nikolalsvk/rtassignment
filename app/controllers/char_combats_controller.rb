@@ -1,10 +1,10 @@
 class CharCombatsController < ApplicationController
 
-  before_action :find_char_combat, :only => [ :show, :destroy, :edit ]
+  before_action :find_char_combat, :only => [ :show, :destroy, :update ]
 
   def index
-    @char_combats = combat_history
-    @combat_challenges = combat_challenges
+    @char_combats = combats(false)
+    @combat_challenges = combats(true)
   end
 
   def create
@@ -30,7 +30,7 @@ class CharCombatsController < ApplicationController
     redirect_to char_combats_path
   end
 
-  def edit
+  def update
     find_char_type
     if @char_combat.first_combatant
       @char_combat.second_combatant = @char_type
@@ -59,11 +59,7 @@ class CharCombatsController < ApplicationController
     @char_combat = CharCombat.find_by_id(params[:id])
   end
 
-  def combat_challenges
-    CharCombat.where(:challenge => true)
-  end
-
-  def combat_history
-    CharCombat.where(:challenge => false)
+  def combats(bool)
+    CharCombat.where(:challenge => bool)
   end
 end

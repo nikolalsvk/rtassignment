@@ -53,11 +53,11 @@ describe CharType do
                                         :second_combatant => @char_one })
       @combat_three = CharCombat.create!({ :first_combatant => @char_two,
                                         :second_combatant => @char_three })
-      @char_combats = [ @combat_one, @combat_two ]
+      @char_combats = [ @combat_one, @combat_two, @combat_three ]
     end
 
     it "should find characters combat history" do
-      expect(@char_one.get_combat_history.to_a).to eql(@char_combats)
+      expect(@char_one.combats.to_a).to eql(@char_combats)
     end
   end
 end

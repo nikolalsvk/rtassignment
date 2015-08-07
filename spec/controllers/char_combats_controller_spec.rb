@@ -43,8 +43,8 @@ RSpec.describe CharCombatsController, type: :controller do
 
   describe "GET index" do
     before do
-      allow(controller).to receive(:combat_history).and_return(@char_combats)
-      allow(controller).to receive(:combat_challenges).and_return(@combat_challenges)
+      allow(controller).to receive(:combats).with(false).and_return(@char_combats)
+      allow(controller).to receive(:combats).with(true).and_return(@combat_challenges)
 
       get :index
     end
@@ -127,7 +127,7 @@ RSpec.describe CharCombatsController, type: :controller do
     end
   end
 
-  describe "GET edit" do
+  describe "PATCH update" do
     before do
       @char_type = double(CharType)
       allow(@user).to receive_message_chain(:char_types, :find_by_id).and_return(@char_type)
@@ -138,7 +138,7 @@ RSpec.describe CharCombatsController, type: :controller do
 
       allow(@char_combat).to receive(:save)
 
-      get :edit, :id => 46, :char_type => 1
+      patch :update, :id => 46, :char_type => 1
     end
 
     it "should assign character type" do
@@ -152,7 +152,7 @@ RSpec.describe CharCombatsController, type: :controller do
     it "should receive save" do
       expect(@char_combat).to receive(:save)
 
-      get :edit, :id => 46, :char_type => 1
+      patch :update, :id => 46, :char_type => 1
     end
 
     it "should redirect to combat page" do
