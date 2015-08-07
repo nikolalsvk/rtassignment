@@ -29,8 +29,13 @@ class CharType < ActiveRecord::Base
   end
 
   def get_combat_history
-    CharCombat.where("first_combatant_id = ? OR second_combatant_id = ?",
-                     self, self)
+    CharCombat.where("(first_combatant_id = ? OR second_combatant_id = ?) and challenge = ?",
+                     self, self, false)
+  end
+
+  def get_challenges
+    CharCombat.where("(first_combatant_id != ? OR second_combatant_id != ?) and challenge = ?",
+                     self, self, true)
   end
 
   def destroy_char_combat_history

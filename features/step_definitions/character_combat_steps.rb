@@ -10,7 +10,7 @@ When(/^I choose two characters to combat$/) do
   click_button "Fight"
 end
 
-Then(/^I should see is the combat winner$/) do
+Then(/^I should see the combat winner$/) do
   expect(page).to have_content("And the winner is: Rogue")
 end
 
@@ -42,7 +42,7 @@ Then(/^I should see combat history$/) do
   expect(page).to have_content("Fight " + @combat_three.id.to_s)
 end
 
-Then(/^I should see is the combat loser$/) do
+Then(/^I should see the combat loser$/) do
   expect(page).to have_content("Loser is: Paladin")
 end
 

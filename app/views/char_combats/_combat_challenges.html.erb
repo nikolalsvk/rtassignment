@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <tr class="info">
+    <th>Fight number</th>
+    <th>First combatant</th>
+    <th>Second combatant</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% combat_challenges.each do |char_combat| %>
+    <tr>
+      <td>Challenge <%= char_combat.id %></td>
+      <td><%= render "char_combats/first", :char_combat => char_combat %></td>
+      <td><%= render "char_combats/second", :char_combat => char_combat %></td>
+      <td><%= link_to "Join", edit_char_combat_path(char_combat, :char_type => @char_type) if @char_type %></td>
+      <td><%= link_to "Show", char_combat_path(char_combat) %></td>
+      <td><%= link_to "Destroy", char_combat_path(char_combat), :method => :delete,
+              :data => { :confirm => 'Are you sure?' } %>
+    </tr>
+  <% end %>
+</table>

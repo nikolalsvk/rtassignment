@@ -6,7 +6,7 @@ Feature: Character combat
 
   Scenario: Combat winner in a fight between two characters
     When I choose two characters to combat
-    Then I should see is the combat winner
+    Then I should see the combat winner
 
   Scenario: View combat history of all characters
     Given I have multiple characters
@@ -16,7 +16,7 @@ Feature: Character combat
 
   Scenario: Combat loser in a fight between two characters
     When I choose two characters to combat
-    Then I should see is the combat loser
+    Then I should see the combat loser
 
   Scenario: Clickable combat history table
     Given characters have fighted before

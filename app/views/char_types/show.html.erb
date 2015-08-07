@@ -22,7 +22,11 @@
 
 <% @char_combats = @char_type.get_combat_history %>
 
+<strong>Previous fights:</strong>
 <%= render "char_combats/char_combats" %>
+
+<strong>Open challenges:</strong>
+<%= render "char_combats/combat_challenges", :combat_challenges => @char_type.get_challenges %>
 
 <div class="col-sm-offset-0 col-sm-10">
   <%= link_to 'Back', char_types_path %>

@@ -7,8 +7,13 @@ RSpec.describe CharCombat, type: :model do
   it { should have_db_column(:created_at) }
   it { should have_db_column(:updated_at) }
 
-  it { should validate_presence_of(:first_combatant) }
-  it { should validate_presence_of(:second_combatant) }
+  describe "combat validation" do
+    it "combat should not be valid if both combatants are nil" do
+      @char_combat = CharCombat.new(:first_combatant => nil, :second_combatant => nil)
+      
+      expect(@char_combat).to_not be_valid
+    end
+  end
 
   describe "#combat" do
     before do
