@@ -15,7 +15,6 @@
 /log/*.log
 /tmp
 
-
 /public/uploads
 
 # Elastic Beanstalk Files
