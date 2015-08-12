@@ -3,9 +3,7 @@ development:
   encoding: unicode
   database: rpgapp_development
   pool: 5
-  username: nikolalsvk
-  password: test
-
+  username: <%= ENV['RDS_USERNAME'] %>
     # Connect on a TCP socket. Omitted by default since the client uses a
     # domain socket that doesn't need configuration. Windows does not have
     # domain sockets, so uncomment these lines.
@@ -32,9 +30,8 @@ test: &test
   encoding: unicode
   database: rpgapp_test
   pool: 5
-  username: nikolalsvk
-  password:
-
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
 production:
   adapter: postgresql
   encoding: unicode
