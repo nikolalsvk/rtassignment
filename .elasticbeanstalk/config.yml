@@ -1,5 +1,5 @@
 branch-defaults:
-  master:
+  deploy_beanstalk:
     environment: rpg-app-env
 global:
   application_name: rtassignment
