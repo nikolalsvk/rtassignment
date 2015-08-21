@@ -18,7 +18,7 @@
         height: 100%;
         /* The html and body elements cannot have any padding or margin. */
       }
-      
+
       img {
         display: block;
         max-width:600px;
@@ -64,19 +64,19 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/"><i>RPG App</i></a>
         </div>
-        
+
         <ul class="nav navbar-nav">
         <li class="active"><%= link_to "All characters", char_types_path %></li>
         <li><%= link_to "New character", new_char_type_path %></li>
         <li><%= link_to "All combats", char_combats_path %></li>
-        <li><%= link_to "NEW COMBAT", new_char_combat_path %></li>
+        <li><%= link_to "NEW WOMBAT", new_char_combat_path %></li>
         <% if user_signed_in? %>
           <li class="pull-right"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
         <% end %>
         </ul>
       </div>
     </nav>
-  
+
     <div class="container">
       <!-- Added for Devise -->
       <% if notice %>
@@ -86,14 +86,14 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
     </div>
-    
+
     <div class="container">
       <%= yield %>
     </div>
-    
+
   </div>
-  
-    
+
+
   <div id="footer">
     <div class="container">
       <p class="navbar-text pull-right">
