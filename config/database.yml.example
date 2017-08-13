@@ -1,0 +1,14 @@
+# Copy this to config/database.yml
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: rpgapp_development
+
+test:
+  <<: *default
+  database: rpgapp_test
