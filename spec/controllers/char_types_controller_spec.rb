@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe CharTypesController, :type => :controller do
   include_context "user logs in"
-  
+
   before do
     @char_type = double(CharType)
   end
@@ -30,6 +30,11 @@ RSpec.describe CharTypesController, :type => :controller do
   describe "GET show" do
     before do
       find_char_type_stub
+
+      allow(@char_type).to receive_message_chain(:char_attributes,
+                                                 :by_title,
+                                                 :page,
+                                                 :per).and_return(@char_type)
       get :show, :id => 46
     end
 
@@ -206,7 +211,7 @@ RSpec.describe CharTypesController, :type => :controller do
   end
 
   def find_char_type_stub
-    allow(@user).to receive_message_chain(:char_types, 
+    allow(@user).to receive_message_chain(:char_types,
                                           :find_by_id).and_return(@char_type)
   end
 

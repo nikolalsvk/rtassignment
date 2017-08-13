@@ -6,6 +6,7 @@ class CharTypesController < ApplicationController
   end
 
   def show
+    @char_attributes = @char_type.char_attributes.by_title.page(params[:page]).per(4)
   end
 
   def new
