@@ -9,8 +9,8 @@
     <th></th>
     <th></th>
   </tr>
-  
-  <%= render @char_attribute %>
+
+  <%= render "char_attributes/char_attribute", :char_attribute => @char_attribute %>
 </table>
 
 <%= link_to 'Back', char_types_path %>
