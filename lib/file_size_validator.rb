@@ -9,7 +9,8 @@ class FileSizeValidator < ActiveModel::EachValidator
   RESERVED_OPTIONS  = [:minimum, :maximum, :within, :is, :tokenizer, :too_short, :too_long]
 
   def initialize(options)
-    if range = (options.delete(:in) || options.delete(:within))
+    range = (options.delete(:in) || options.delete(:within))
+    if range
       raise ArgumentError, ":in and :within must be a Range" unless range.is_a?(Range)
       options[:minimum], options[:maximum] = range.begin, range.end
       options[:maximum] -= 1 if range.exclude_end?
@@ -36,11 +37,12 @@ class FileSizeValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
     raise(ArgumentError, "A CarrierWave::Uploader::Base object was expected") unless value.kind_of? CarrierWave::Uploader::Base
-    
+
     value = (options[:tokenizer] || DEFAULT_TOKENIZER).call(value) if value.kind_of?(String)
 
     CHECKS.each do |key, validity_check|
-      next unless check_value = options[key]
+      check_value = options[key]
+      next unless check_value
 
       value ||= [] if key == :maximum
 
@@ -56,7 +58,7 @@ class FileSizeValidator < ActiveModel::EachValidator
       record.errors.add(attribute, MESSAGES[key], errors_options)
     end
   end
-  
+
   def help
     Helper.instance
   end
