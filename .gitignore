@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+# Ignore public
+public/assets/
+
 # Ignore uploads
 /public/uploads
 
