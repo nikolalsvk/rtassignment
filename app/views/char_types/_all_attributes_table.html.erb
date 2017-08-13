@@ -10,7 +10,7 @@
 
   <%= paginate @char_attributes %>
 
-  <%= @char_attributes.each do |char_attribute| %>
+  <% @char_attributes.each do |char_attribute| %>
     <%= render "char_attributes/char_attribute", :char_attribute => char_attribute %>
   <% end %>
 
