@@ -16,17 +16,6 @@ ActiveRecord::Schema.define(version: 20150804140800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attributes", force: true do |t|
-    t.string   "title"
-    t.integer  "value"
-    t.string   "icon"
-    t.integer  "char_type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "attributes", ["char_type_id"], name: "index_attributes_on_char_type_id", using: :btree
-
   create_table "char_attributes", force: true do |t|
     t.string   "title"
     t.integer  "value"

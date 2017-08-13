@@ -15,9 +15,14 @@
 /log/*.log
 /tmp
 
+# Ignore uploads
 /public/uploads
 
+# Ignore zips
 *.zip
+
+# Ignore database.yml
+config/database.yml
 
 # simplecov generated
 coverage
