@@ -25,9 +25,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Twitter Bootstrap
-gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+gem 'therubyracer'
+gem 'less-rails' # Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails'
 
 # Devise gem for user registration etc.
 gem 'devise'
@@ -58,21 +58,10 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
-  gem "byebug"
+  gem 'byebug'
 end
 
 group :test do
   gem 'simplecov', :require => false
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
