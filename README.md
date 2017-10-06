@@ -47,4 +47,4 @@ Thanks for reading, if you have any question feel free to ask.
 If you like the project or find it helpful, give it some :star: and :heart:.
 Pull requests and contributions are welcome.
 
-Happy coding!
+Happy coding! 
