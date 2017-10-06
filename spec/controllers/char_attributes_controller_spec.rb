@@ -3,6 +3,7 @@ require 'rails_helper'
 describe CharAttributesController, :type => :controller do
 
   include_context "user logs in"
+  
   before do
     @char_type = double(CharType)
     @char_attribute = double(CharAttribute)
