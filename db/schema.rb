@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150804140800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "char_attributes", force: true do |t|
+  create_table "char_attributes", force: :cascade do |t|
     t.string   "title"
     t.integer  "value"
     t.string   "icon"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150804140800) do
 
   add_index "char_attributes", ["char_type_id"], name: "index_char_attributes_on_char_type_id", using: :btree
 
-  create_table "char_combats", force: true do |t|
+  create_table "char_combats", force: :cascade do |t|
     t.integer  "first_combatant_id"
     t.integer  "second_combatant_id"
     t.integer  "winner"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150804140800) do
     t.datetime "updated_at"
   end
 
-  create_table "char_types", force: true do |t|
+  create_table "char_types", force: :cascade do |t|
     t.string   "title"
     t.string   "avatar"
     t.integer  "user_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150804140800) do
 
   add_index "char_types", ["user_id"], name: "index_char_types_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

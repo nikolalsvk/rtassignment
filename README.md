@@ -4,6 +4,8 @@
 
 # RPG App
 
+# THIS BRANCH IS USED TO TEST [render_async](https://github.com/renderedtext/render_async) WITH JQUERY
+
 App for managing your fantasy characters
 
 ## Description
@@ -42,9 +44,9 @@ bundle exec rails server
 
 Visit the app in [your browser](http://localhost:3000/)
 
-Thanks for reading, if you have any question feel free to ask. 
+Thanks for reading, if you have any question feel free to ask.
 
 If you like the project or find it helpful, give it some :star: and :heart:.
 Pull requests and contributions are welcome.
 
-Happy coding! 
+Happy coding!

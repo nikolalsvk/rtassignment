@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Ruby version
-ruby "2.2.6"
+ruby "2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
@@ -43,6 +43,9 @@ gem 'kaminari'
 
 # foreign key
 gem 'foreigner', '~> 1.7.4'
+
+# render_async
+gem 'render_async'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

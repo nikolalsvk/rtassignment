@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :char_combats
+
+  resource :render_async, :only => :show do
+    member { get :render_me }
+  end
 end
